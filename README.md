@@ -1,4 +1,6 @@
-# Pet Store ![example workflow](/actions/workflows/tests/badge.svg)
+# Pet Store 
+[![Automated Testing](https://github.com/CommonGateway/PetStore/actions/workflows/tests.yml/badge.svg)](https://github.com/CommonGateway/PetStore/actions/workflows/tests.yml)
+
 A example implementation of a Common Gateway configuration for generating an API. This example has been specifically setup to use as a temple, read more about that under [Using this repositry as a temple](#Using this repositry as a temple).
 
 - [API Defintion (redocly)](https://redocly.github.io/redoc/?url=https://raw.githubusercontent.com/CommonGateway/PetStore/main/OAS.yaml&nocors)
@@ -24,5 +26,5 @@ In order to use this repositry as a template hit ["Use this template"](https://g
 
 1. Replace the OAS file in the repository root with your own api definition
 2. Open the public code file and update the name, description and urls accordingly (dont foget to update the urls in the description section)
-3. Open the readme.md file alter it to suit your project 
+3. Open the readme.md file alter it to suit your project (don't forget to update the url of the status badge)
 4. If you want your API to be downloadable trough the Common Gateway API store make sure that your repository is set to public
