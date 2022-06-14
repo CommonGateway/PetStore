@@ -65,7 +65,7 @@ jobs:
       # Run POSTMAN collection and output the file as html
       - name: Run POSTMAN collection
         run: |
-         newman run ./tests/postman-collection.json -r htmlextra --reporter-htmlextra-export tests/results/htmlreport.html --reporter-htmlextra-darkTheme  > tests/results/runreport1.html
+         newman run ./tests/postman-collection.json
 
          
       # Upload test results
