@@ -33,6 +33,11 @@ services:
       - APP_ENV=dev
       - APP_DEBUG=0
       - APP_CACHE=true
+      - PUBLICCODE=${PUBLICCODE}
+      - RABBITMQ_HOST=rabbitmq
+      - RABBITMQ_PORT=5672
+      - RABBITMQ_USERNAME=${RABBITMQ_USERNAME}
+      - RABBITMQ_PASSWORD=${RABBITMQ_PASSWORD}
     ports:
       - "82:80"
 
