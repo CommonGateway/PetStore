@@ -33,18 +33,28 @@ jobs:
 
       - name: Taking some sleep (for containers to come up)
         run: sleep 45
-        
+
       - name: Check if all containers are running
         run: docker ps
 
+      # Create collection and configure gateway
       - name: Create collection and configure gateway with oas
         run: "docker-compose exec -T php bin/console app:load-publiccodes"
 
       # Install Node.js environment
-      - name: set up node
+      - name: Set up node
         uses: actions/setup-node@v1
         with:
             node-version: '12.x'
+      
+      # Install openapi-to-postman
+      - name: Install openapi-to-postman
+        run: | 
+         npm i -g openapi-to-postmanv2
+      
+      # Create Postman collection
+      - name: Create Postman collection
+        run: openapi2postmanv2 -s OAS.yaml -o tests/postman-collection.json -p -O folderStrategy=Tags,includeAuthInfoInExample=false
 
       # Install newman
       - name: Install newman
@@ -58,7 +68,7 @@ jobs:
       # Run POSTMAN collection and output the file as html
       - name: Run POSTMAN collection
         run: |
-         newman run ./tests/pokemon-api-collection.json -e ./tests/pokemonapi-env.json -r htmlextra --reporter-htmlextra-export testResults/htmlreport.html --reporter-htmlextra-darkTheme  > testResults/runreport1.html
+         newman run ./tests/postman-collection.json -r htmlextra --reporter-htmlextra-export tests/results/htmlreport.html --reporter-htmlextra-darkTheme  > tests/results/runreport1.html
 
          
       # Upload test results
