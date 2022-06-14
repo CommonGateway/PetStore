@@ -33,3 +33,31 @@ jobs:
 
       - name: Create collection and configure gateway with oas
         run: "docker-compose exec -T php bin/console app:load-publiccodes"
+
+      # Install Node.js environment
+      - name: set up node
+        uses: actions/setup-node@v1
+        with:
+            node-version: '12.x'
+
+      # Install newman
+      - name: Install newman
+        run: | 
+         npm install -g newman
+         npm install -g newman-reporter-htmlextra
+
+      - name: Make Directory for results
+        run: mkdir -p testResults    
+      
+      # Run POSTMAN collection and output the file as html
+      - name: Run POSTMAN collection
+        run: |
+         newman run ./tests/pokemon-api-collection.json -e ./tests/pokemonapi-env.json -r htmlextra --reporter-htmlextra-export testResults/htmlreport.html --reporter-htmlextra-darkTheme  > testResults/runreport1.html
+
+         
+      # Upload test results
+      - name: Output the run Details
+        uses: actions/upload-artifact@v2
+        with: 
+          name: RunReports
+          path: testResults
