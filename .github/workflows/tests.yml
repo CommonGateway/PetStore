@@ -32,4 +32,4 @@ jobs:
         run: docker-compose up -d
 
       - name: Create collection and configure gateway with oas
-        run: "docker-compose exec php bin/console app:load-publiccodes"
+        run: "docker-compose exec -T php bin/console app:load-publiccodes"
