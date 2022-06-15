@@ -54,7 +54,7 @@ jobs:
       
       # Create Postman collection
       - name: Create Postman collection
-        run: openapi2postmanv2 -s OAS.yaml -o tests/postman-collection.json -p -O folderStrategy=Tags,includeAuthInfoInExample=false -t
+        run: openapi2postmanv2 -s OAS.yaml -o tests/postman-collection.json -p -t -O  folderStrategy=Tags,includeAuthInfoInExample=false 
 
       # Install newman
       - name: Install newman
