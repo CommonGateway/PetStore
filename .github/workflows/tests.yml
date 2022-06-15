@@ -54,7 +54,7 @@ jobs:
       
       # Create Postman collection
       - name: Create Postman collection
-        run: openapi2postmanv2 -s OAS.yaml -o tests/postman-collection.json -t -p -O folderStrategy=Tags,includeAuthInfoInExample=false 
+        run: openapi2postmanv2 -s OAS.yaml -o tests/postman-collection.json -p -O folderStrategy=Tags,includeAuthInfoInExample=false
 
       # Install newman
       - name: Install newman
@@ -65,7 +65,7 @@ jobs:
       # Run POSTMAN collection and output the file as html
       - name: Run POSTMAN collection
         run: |
-         newman run ./tests/postman-collection.json --bail -r htmlextra --reporter-htmlextra-export tests/results/htmlreport.html --reporter-htmlextra-darkTheme  > tests/results/runreport1.html
+         newman run ./tests/postman-collection.json -r htmlextra --reporter-htmlextra-export tests/results/htmlreport.html --reporter-htmlextra-darkTheme  > tests/results/runreport1.html
          
       # Upload test results
       - name: Output the run Details
