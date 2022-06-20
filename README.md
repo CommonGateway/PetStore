@@ -1,4 +1,4 @@
-# Pet Store 
+# Pet Store API
 [![Automated Testing](https://github.com/CommonGateway/PetStore/actions/workflows/tests.yml/badge.svg)](https://github.com/CommonGateway/PetStore/actions/workflows/tests.yml)
 
 A example implementation of a Common Gateway configuration for generating an API. This example has been specifically setup to use as a temple, read more about that under [Using this repositry as a temple](#Using this repositry as a temple).
