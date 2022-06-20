@@ -13,6 +13,9 @@ on:
   # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
 
+  # Allows this workflow to be used in other repositories
+  workflow_call:
+
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
   # This workflow contains a single job called "build"
@@ -65,6 +68,7 @@ jobs:
       # Run POSTMAN collection and output the file as html
       - name: Run POSTMAN collection
         run: |
+         newman run ./tests/pokemon-api-collection.json -e ./tests/pokemonapi-env.json -r htmlextra --reporter-htmlextra-export testResults/htmlreport.html --reporter-htmlextra-darkTheme  > testResults/runreport1.html
          newman run ./tests/postman-collection.json -r htmlextra --reporter-htmlextra-export tests/results/htmlreport.html --reporter-htmlextra-darkTheme  > tests/results/runreport1.html
          
       # Upload test results
