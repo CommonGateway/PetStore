@@ -55,15 +55,21 @@ In order to use this repositry as a template hit ["Use this template"](https://g
 
 2. Replace .github/workflows/tests.yml with:
 
+        # This is an workflow to autmaticly tests the validity of your OAS definitons and the Common Gateway's abillity to provide an API for them
         name: Automated Testing
+
+        # Controls when the workflow will run
         on:
+          # Triggers the workflow on push or pull request events but only for the "main" branch
           push:
             branches: [ "main" ]
           pull_request:
             branches: [ "main" ] 
 
+          # Allows you to run this workflow manually from the Actions tab
           workflow_dispatch:
 
+        # Uses the default testing workflow from https://github.com/CommonGateway/PetStoreAPI
         jobs:
           call-testing-workflow-from-default-pet-store-api:
             uses: CommonGateway/PetStoreAPI/.github/workflows/tests.yml@main
