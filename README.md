@@ -55,7 +55,7 @@ In order to use this repositry as a template hit ["Use this template"](https://g
 
 2. Replace .github/workflows/tests.yml with:
 
-    name: Automated Testing
+   `name: Automated Testing
     on:
       push:
         branches: [ "main" ]
@@ -66,7 +66,7 @@ In order to use this repositry as a template hit ["Use this template"](https://g
 
     jobs:
       call-testing-workflow-from-default-pet-store-api:
-        uses: CommonGateway/PetStoreAPI/.github/workflows/tests.yml@main 
+        uses: CommonGateway/PetStoreAPI/.github/workflows/tests.yml@main `
 
 3. Open the public code file and update the name, description and urls accordingly (dont foget to update the urls in the description section)
 
