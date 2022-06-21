@@ -10,14 +10,20 @@ Here you can find an example of a Common Gateway configuration for generating an
 ## Create or edit your OpenAPI Specification
 
 What is OpenAPI Specification
-//TODO Elaborate
-This template uses an OpenAPI Specification (OAS) as an API definition from which your application can read the defined API.
+
+The OpenApi Specification(OAS) defines a standard, language-agnostic interface to RESTful APIs, allowing humans and computers to discover and understand the service's capabilities without access to source code, documentation, or network traffic inspection. When properly defined, a consumer can understand and interact with the remote service with minimal implementation logic.
+
+Documentation generation tools can then use an OpenAPI definition to display the API, code generation tools to generate servers and clients in various programming languages, testing tools, and many other use cases.
+
+This template uses the (OAS) as an API definition for the reasons above.
+
+### Creating the OAS
+
 Writing the API standard yourself is very error-prone. We recommend using [Stoplight](https://stoplight.io) for the automatic generation of an OAS, but there's also [Postman](https://www.postman.com). For checking, there are also editors, like <https://editor.swagger.io>.
 
+The OAS can be defined in both JSON and YAML. It shouldn't make a difference in most cases, and although we often work from a YAML-first basis, there have been times were working with JSON was superior.
 
-//TODO explain why we need a OAS as yaml file and what we do with it
-
-That OAS definition can be created with multiple tools. We recommend using [stoplight.io](https://stoplight.io), but you also use [Postman](https://www.postman.com) or a simple editor if you know the standard like https://editor.swagger.io.
+That OAS definition can be created with multiple tools. We recommend using [stoplight.io](https://stoplight.io), but you also use [Postman](https://www.postman.com) or a simple editor if you know the standard like <https://editor.swagger.io>.
 
 - Register or log in on Stoplight.
 - Create a workspace
@@ -28,23 +34,21 @@ That OAS definition can be created with multiple tools. We recommend using [stop
 - You can create new paths (endpoints) and models (objects) in the bottom left window.
 - To link a path with a model, you can select a path, add or select a response, add or select `body` from that response, and then if this path is for collections, select `array` as a type with a subtype `$ref` or if this path is for a single object select `$ref` as type. You can then find your created model and link it
 
-
 ### Editing your OAS
 
 If you created a new project, you can remove the example paths and models by right-clicking on these in the bottom left window and selecting 'Delete'. You can also keep these examples if you want to.
 
-Firstly, you should create a model (object) which we can link to a path later. Right-click on 'Models' in the bottom left window and select 'New model'. Here you can define an object. 
+Firstly, you should create a model (object) which we can link to a path later. Right-click on 'Models' in the bottom left window and select 'New model'. Here you can define an object.
 
 You can create paths (endpoints) by right-clicking on 'Paths' in the bottom left window and selecting 'New Path'. You can add multiple methods to your path by selecting one and pressing the + operation button.
 
 To link a path with a model, you can select a path, add or select a response, add or select `body` from that response, and then if this path is an array of objects select array as type with subtype $ref or if this path is for a single object select $ref as type. In the $ref search box you can find and select your created models.
 
-If you are satisfied with your created API you can save it by selecting 'Publish' in the top left of the page. Next, we want to export this OpenAPI Specification by righting clicking your .yaml file in the top left section of the page and selecting 'Export'. Choose the format YAML and press 'Save to file'. 
+If you are satisfied with your created API you can save it by selecting 'Publish' in the top left of the page. Next, we want to export this OpenAPI Specification by righting clicking your .yaml file in the top left section of the page and selecting 'Export'. Choose the format YAML and press 'Save to file'.
 
 Add the saved .yaml to your new API repository. Rename the downloaded file to OAS.yaml and go to the git page of this repository. Open OAS.yaml on github and overwrite it with your created OAS.yaml or [clone this repo to your computer](#Cloning this repository to your computer) and overwrite it in your favourite IDE and git commit/push it. //TODO could be better written
 
 Your created OAS is now in your new API repository, you can always view or edit it through Stoplight and export it again.
-
 
 ## About Common Gateway configuration files
 
