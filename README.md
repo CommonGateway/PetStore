@@ -73,6 +73,8 @@ Skip this if you installed Git wihtout GUI and followed those steps, but if you 
 - Wait for containers to finish loading.
 - If the php container shows: 'Ready to handle connections' your API is accessible on localhost/api or localhost:80/api. 
 
+If there are any issues when loading the containers try to execute: `docker-compose pull` and then try `docker-compose up` again.
+
 // TODO How to make API calls to your API / test it
 
 ## Running the API online
