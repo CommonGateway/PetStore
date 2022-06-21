@@ -6,7 +6,7 @@ A example implementation of a Common Gateway configuration for generating an API
 - [API Defintion (redocly)](https://redocly.github.io/redoc/?url=https://raw.githubusercontent.com/CommonGateway/PetStore/main/OAS.yaml&nocors)
 - [API Defintion (file)](https://github.com/CommonGateway/PetStore/blob/main/OAS.yaml)
 - [Publiccode](https://github.com/CommonGateway/PetStore/blob/main/publiccode.yaml)
-- [stoplight.io](https://conduction.stoplight.io/studio/pet-store:main?)
+- [Stoplight.io](https://conduction.stoplight.io/studio/pet-store:main?)
 
 ## About Common Gateway configuration files
 Read more..
@@ -43,10 +43,39 @@ The console should show if the API has been loaded successfully, and then you ca
 
 On every commit github launches a action that generates a postman collection and tests the API. Its results can be viewed under Actions on the github page.
 
-## Using this repositry as a temple
+Make sure that in your OAS definition there is a localhost server defined like:
+    
+    servers:
+     - url: localhost/api
+
+## Using this repositry as a template
 In order to use this repositry as a template hit ["Use this template"](https://github.com/CommonGateway/PetStore/generate) in the top right corner of the repository and select the user/organisation and name under wich you would like to setup your new repository. Afther you have created you new ropistory please follow the follwoing steps
 
 1. Replace the OAS file in the repository root with your own api definition
-2. Open the public code file and update the name, description and urls accordingly (dont foget to update the urls in the description section)
-3. Open the readme.md file alter it to suit your project (don't forget to update the url of the status badge)
-4. If you want your API to be downloadable trough the Common Gateway API store make sure that your repository is set to public
+
+2. Replace .github/workflows/tests.yml with:
+
+        # This is an workflow to autmaticly tests the validity of your OAS definitons and the Common Gateway's abillity to provide an API for them
+        name: Automated Testing
+
+        # Controls when the workflow will run
+        on:
+          # Triggers the workflow on push or pull request events but only for the "main" branch
+          push:
+            branches: [ "main" ]
+          pull_request:
+            branches: [ "main" ] 
+
+          # Allows you to run this workflow manually from the Actions tab
+          workflow_dispatch:
+
+        # Uses the default testing workflow from https://github.com/CommonGateway/PetStoreAPI
+        jobs:
+          call-testing-workflow-from-default-pet-store-api:
+            uses: CommonGateway/PetStoreAPI/.github/workflows/tests.yml@main
+
+3. Open the public code file and update the name, description and urls accordingly (dont foget to update the urls in the description section)
+
+4. Open the readme.md file alter it to suit your project (don't forget to update the url of the status badge)
+
+5. If you want your API to be downloadable trough the Common Gateway API store make sure that your repository is set to public

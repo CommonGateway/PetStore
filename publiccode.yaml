@@ -30,7 +30,7 @@ description:
     # testDataLocation: 'https://raw.githubusercontent.com/CommonGateway/PetStore/main/data/data.json'
   en:
     shortDescription: "An API for data around products for municipalities."
-    documentation: 'https://redocly.github.io/redoc/?url=https://raw.githubusercontent.com/CommonGateway/pdc-component/main/OAS.yaml&nocors'
+    documentation: 'https://redocly.github.io/redoc/?url=https://raw.githubusercontent.com/CommonGateway/PetStore/main/OAS.yaml&nocors'
     apiDocumentation: 'https://raw.githubusercontent.com/CommonGateway/PetStore/main/OAS.yaml'
     # testDataLocation: 'https://raw.githubusercontent.com/CommonGateway/PetStore/main/data/data.json'
 
