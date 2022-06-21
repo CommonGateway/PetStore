@@ -14,7 +14,7 @@ What is OpenAPI Specification
 
 //TODO Elaborate
 
-This template uses a OpenAPI Specification (OAS) as API definition in which your API can be defined and read from.
+This template uses a OpenAPI Specification (OAS) as API definition in which your API can be read from.
 
 That OAS definition can be created with multiple tools. We recommend using [stoplight.io](https://stoplight.io), but you also use [Postman](https://www.postman.com) or a simple editor if you know the standard like https://editor.swagger.io.
 
