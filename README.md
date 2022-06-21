@@ -23,8 +23,6 @@ Writing the API standard yourself is very error-prone. We recommend using [Stopl
 
 The OAS can be defined in both JSON and YAML. It shouldn't make a difference in most cases, and although we often work from a YAML-first basis, there have been times were working with JSON was superior.
 
-That OAS definition can be created with multiple tools. We recommend using [stoplight.io](https://stoplight.io), but you also use [Postman](https://www.postman.com) or a simple editor if you know the standard like <https://editor.swagger.io>.
-
 To create an OAS with [Stoplight](https://stoplight.io/), follow these steps:
 
 - Register or log in on Stoplight.
@@ -64,13 +62,41 @@ We generated the public code for this repository with the Public Code [YAML](htt
 
 ## Running the API locally
 
-// TODO more explaination
-You need [Docker desktop](https://www.docker.com/) if you want to use this API locally on the Gateway. Once you have installed Docker Desktop, go to the project's root with a command line.
-Then you can run the image with:
+Running this API can be done through various ways. If you are familiar with Docker and Git, you can execute the commande needed. For those not familair, below is a detailed walkthrough.
 
-`$ docker-compose up`
+```bash
+git clone https://github.com/CommonGateway/PetStoreAPI.git
+cd PetStoreAPI
+docker-compose up
+```
 
-The Gateway is ready when the terminal displays the `"Ready to handle connections"`. The API runs on `port:80` and the endpoints of this API fall under `/api`
+To run and test this API locally you first clone this repository to your local computer. You will need to have [Git](https://git-scm.com/download/win) installed or any [Git GUI](https://git-scm.com/downloads/guis) (we recommend [GitKraken](https://www.gitkraken.com)).
+
+You also need [Docker desktop](https://www.docker.com/) installed to run this API dockerized. Docker will run this API on the Common Gateway on dockerized containers so you dont have to worry about having the correct PHP version or other languages/dependencies.
+
+- On the GitHub page of this repository press `Code` and copy the `https` link.
+
+If you installed Git without GUI:
+
+- Open a command line interface, for windows you can press `Win+R` and search for `cmd`.
+- Execute the command `git clone (link you copied) (directory you want to clone the repository to`, an example: `git clone https://github.com/CommonGateway/PetStoreAPI.git C:\Users\JohnDoe\Projects`.
+- Change to that directory with `cd (directory where repository is cloned to)`, an example: `cd C:\Users\JohnDoe\Projects\PetStore`.
+
+Skip this if you installed Git wihtout GUI and followed those steps, but if you installed Git with GUI (GitKraken):
+
+- Open GitKraken.
+- Select `Clone a repo`.
+- Paste your copied repository link and select the preferred directory.
+- Open a command line interface, for windows you can press `Win+R` and search for `cmd`.
+- Change to the chosen directory with `cd (directory where repository is cloned to)`, an example: `cd C:\Users\JohnDoe\Projects\PetStore`.
+
+- Execute `docker-compose up`
+- Wait for containers to finish loading.
+- If the php container shows: 'Ready to handle connections' your API is accessible on localhost/api or localhost:80/api.
+
+If there are any issues when loading the containers try to execute: `docker-compose pull` and then try `docker-compose up` again.
+
+// TODO How to make API calls to your API / test it
 
 ## Running the API online
 
