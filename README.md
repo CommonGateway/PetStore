@@ -33,7 +33,6 @@ To create an OAS with [Stoplight](https://stoplight.io/), follow these steps:
 - Create a new project with the `New Project` button in the top right corner.
 - If you want to create a new API, create a blank project with a proper name.
 - If you want to edit an already existing API and you have the OpenApi file for that API, you can choose to `Import OpenAPI file`
-<<<<<<< HEAD
 - You can create new paths (endpoints) and models (objects) in the bottom left window.
 - To link a path with a model, you can select a path, add or select a response, add or select `body` from that response, and then if this path is for collections, select `array` as a type with a subtype `$ref` or if this path is for a single object select `$ref` as type. You can then find your created model and link it
 
