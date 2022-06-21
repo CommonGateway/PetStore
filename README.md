@@ -11,19 +11,15 @@ Here you can find an example of a Common Gateway configuration for generating an
 
 What is OpenAPI Specification
 //TODO Elaborate
-
-
 This template uses an OpenAPI Specification (OAS) as an API definition from which your application can read the defined API.
 Writing the API standard yourself is very error-prone. We recommend using [Stoplight](https://stoplight.io) for the automatic generation of an OAS, but there's also [Postman](https://www.postman.com). For checking, there are also editors, like <https://editor.swagger.io>.
-=======
-This template uses a OpenAPI Specification (OAS) as API definition in which your API can be read from.
+
 
 //TODO explain why we need a OAS as yaml file and what we do with it
 
 That OAS definition can be created with multiple tools. We recommend using [stoplight.io](https://stoplight.io), but you also use [Postman](https://www.postman.com) or a simple editor if you know the standard like https://editor.swagger.io.
 
 To create an OAS with [Stoplight](https://stoplight.io/), follow these steps:
-
 
 - Register or log in on Stoplight.
 - Create a workspace
