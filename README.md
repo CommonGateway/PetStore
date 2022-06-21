@@ -16,6 +16,8 @@ What is OpenAPI Specification
 
 This template uses a OpenAPI Specification (OAS) as API definition in which your API can be read from.
 
+//TODO explain why we need a OAS as yaml file and what we do with it
+
 That OAS definition can be created with multiple tools. We recommend using [stoplight.io](https://stoplight.io), but you also use [Postman](https://www.postman.com) or a simple editor if you know the standard like https://editor.swagger.io.
 
 To create a OAS with [stoplight.io](https://stoplight.io) follow these steps:
