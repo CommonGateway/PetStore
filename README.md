@@ -32,12 +32,19 @@ To create a OAS with [stoplight.io](https://stoplight.io) follow these steps:
 
 6. If you want to edit a already existing API and you have the openapi file for that API you can choose to 'Import OpenAPI file'
 
-7. Now you can create new paths (endpoints) and models (objects) in the bottom left window. 
+7. If you created a new project you can choose to remove the example paths and models by right clicking on these in the bottom left window and selecting 'Delete'. You can also keep these examples if you want to.
 
-8. To link a path with a model you can select a path, add or select a response, add or select body from that response, and then if this path is for collections select array as type with subtype $ref or if this path is for a single object select $ref as type. You can then find your created model and link it  
+8. Firstly you should create a model (object) which we can link to a path later. Right click on 'Models' in the bottom left window and select 'New model'. Here you can define a object. 
 
-9. When satisfied with your API //TODO Elaborate
+9. You can create paths (endpoints) by right clicking on 'Paths' in the bottom left window and selecting 'New Path'. You can add multiple methods to your path by selecting one and pressing the + operation button.
 
+10. To link a path with a model you can select a path, add or select a response, add or select body from that response, and then if this path is an array of objects select array as type with subtype $ref or if this path is for a single object select $ref as type. In the $ref search box you can find and select your created models.
+
+11. If you are satisfied with your created API you can save it by selecting 'Publish' in the top left of the page. Next we want to export this OpenAPI Specification by righting clicking your .yaml file in the top left section of the page and selecting 'Export'. Choose the format yaml and press 'Save to file'. 
+
+12. Now we can put the saved .yaml in your new API repository. Rename the downloaded file to OAS.yaml and go to the git page of this repository. Open OAS.yaml on github and overwrite it with your created OAS.yaml or [clone this repo to your computer](#Cloning this repository to your computer) and overwrite it in your favourite IDE and git commit/push it. //TODO could be better written
+
+13. Your created OAS is now in your new API repository, you can always view or edit it through stoplight and export it again.
 
 ## About Common Gateway configuration files
 Read more..
