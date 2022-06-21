@@ -51,13 +51,29 @@ We generated the public code for this repository with the Public Code [YAML](htt
 
 ## Running the API locally 
 
-// TODO more explaination
-You need [Docker desktop](https://www.docker.com/) if you want to use this API locally on the Gateway. Once you have installed Docker Desktop, go to the project's root with a command line.
-Then you can run the image with:
+To run and test this API locally you first need to clone this repository to your local computer. You will need to have [Git](https://git-scm.com/download/win) installed or any [Git GUI](https://git-scm.com/downloads/guis) (we recommend [GitKraken](https://www.gitkraken.com)). 
 
-`$ docker-compose up`
+You also need [Docker desktop](https://www.docker.com/) installed to run this API dockerized. Docker will run this API on the CommonGateway on dockerized containers so you dont have to worry about having the correct PHP version or other languages/dependencies. 
 
-The Gateway is ready when the terminal displays the `"Ready to handle connections"`. The API runs on `port:80` and the endpoints of this API fall under `/api`
+- On the git page of this repository press `Code` and copy the https link. 
+
+If you installed Git without GUI:
+- Open a command line interface, for windows you can press `Win+R` and search for `cmd`. 
+- Execute the command `git clone (link you copied) (directory you want to clone the repository to`, an example: `git clone https://github.com/CommonGateway/PetStoreAPI.git C:\Users\JohnDoe\Projects`.
+- Change to that directory with `cd (directory where repository is cloned to)`, an example: `cd C:\Users\JohnDoe\Projects\PetStore`. 
+
+Skip this if you installed Git wihtout GUI and followed those steps, but if you installed Git with GUI (GitKraken):
+- Open GitKraken. 
+- Select `Clone a repo`.
+- Paste your copied repository link and select the preferred directory. 
+- Open a command line interface, for windows you can press `Win+R` and search for `cmd`. 
+- Change to the chosen directory with `cd (directory where repository is cloned to)`, an example: `cd C:\Users\JohnDoe\Projects\PetStore`. 
+
+- Execute `docker-compose up`
+- Wait for containers to finish loading.
+- If the php container shows: 'Ready to handle connections' your API is accessible on localhost/api or localhost:80/api. 
+
+// TODO How to make API calls to your API / test it
 
 ## Running the API online
 
