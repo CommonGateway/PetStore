@@ -16,6 +16,9 @@ Writing the API standard yourself is very error-prone. We recommend using [Stopl
 
 
 //TODO explain why we need a OAS as yaml file and what we do with it
+Why do we need a OpenAPI Specification (OAS)?
+
+We use the OAS to read and install it on the CommonGateway ([What is the CommonGateway?](#What is the CommonGateway).
 
 That OAS definition can be created with multiple tools. We recommend using [stoplight.io](https://stoplight.io), but you also use [Postman](https://www.postman.com) or a simple editor if you know the standard like https://editor.swagger.io.
 
