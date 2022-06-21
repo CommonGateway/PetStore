@@ -6,7 +6,7 @@ A example implementation of a Common Gateway configuration for generating an API
 - [API Defintion (redocly)](https://redocly.github.io/redoc/?url=https://raw.githubusercontent.com/CommonGateway/PetStore/main/OAS.yaml&nocors)
 - [API Defintion (file)](https://github.com/CommonGateway/PetStore/blob/main/OAS.yaml)
 - [Publiccode](https://github.com/CommonGateway/PetStore/blob/main/publiccode.yaml)
-- [stoplight.io](https://conduction.stoplight.io/studio/pet-store:main?)
+- [Stoplight.io](https://conduction.stoplight.io/studio/pet-store:main?)
 
 ## About Common Gateway configuration files
 Read more..
