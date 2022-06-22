@@ -31,7 +31,7 @@ services:
       - REDIS_PORT=6379
       - APP_REPRO=example
       - APP_ENV=dev
-      - APP_DEBUG=0
+      - APP_DEBUG=1
       - APP_CACHE=true
       - PUBLICCODE=${PUBLICCODE}
       - RABBITMQ_HOST=rabbitmq
