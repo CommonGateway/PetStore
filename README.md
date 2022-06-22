@@ -10,17 +10,18 @@ Here you can find an example of a Common Gateway configuration for generating an
 ## Create or edit your OpenAPI Specification
 
 What is OpenAPI Specification
-//TODO Elaborate
-This template uses an OpenAPI Specification (OAS) as an API definition from which your application can read the defined API.
+
+The OpenApi Specification(OAS) defines a standard, language-agnostic interface to RESTful APIs, allowing humans and computers to discover and understand the service's capabilities without access to source code, documentation, or network traffic inspection. When properly defined, a consumer can understand and interact with the remote service with minimal implementation logic.
+
+Documentation generation tools can then use an OpenAPI definition to display the API, code generation tools to generate servers and clients in various programming languages, testing tools, and many other use cases.
+
+This template uses the (OAS) as an API definition for the reasons above.
+
+### Creating the OAS
+
 Writing the API standard yourself is very error-prone. We recommend using [Stoplight](https://stoplight.io) for the automatic generation of an OAS, but there's also [Postman](https://www.postman.com). For checking, there are also editors, like <https://editor.swagger.io>.
 
-
-//TODO explain why we need a OAS as yaml file and what we do with it
-Why do we need a OpenAPI Specification (OAS)?
-
-We use the OAS to read and install it on the CommonGateway ([What is the CommonGateway?](#What is the CommonGateway).
-
-That OAS definition can be created with multiple tools. We recommend using [stoplight.io](https://stoplight.io), but you also use [Postman](https://www.postman.com) or a simple editor if you know the standard like https://editor.swagger.io.
+The OAS can be defined in both JSON and YAML. It shouldn't make a difference in most cases, and although we often work from a YAML-first basis, there have been times were working with JSON was superior.
 
 To create an OAS with [Stoplight](https://stoplight.io/), follow these steps:
 
@@ -30,14 +31,24 @@ To create an OAS with [Stoplight](https://stoplight.io/), follow these steps:
 - Create a new project with the `New Project` button in the top right corner.
 - If you want to create a new API, create a blank project with a proper name.
 - If you want to edit an already existing API and you have the OpenApi file for that API, you can choose to `Import OpenAPI file`
-- If you created a new project you can choose to remove the example paths and models by right clicking on these in the bottom left window and selecting 'Delete'. You can also keep these examples if you want to.
-- Firstly you should create a model (object) which we can link to a path later. Right click on 'Models' in the bottom left window and select 'New model'. Here you can define a object. 
-- You can create paths (endpoints) by right clicking on 'Paths' in the bottom left window and selecting 'New Path'. You can add multiple methods to your path by selecting one and pressing the + operation button.
-- To link a path with a model you can select a path, add or select a response, add or select `body` from that response, and then if this path is an array of objects select `array` as type with subtype `$ref` or if this path is for a single object select `$ref` as type. In the $ref search box you can find and select your created models.
-- If you are satisfied with your created API you can save it by selecting 'Publish' in the top left of the page. Next we want to export this OpenAPI Specification by righting clicking your .yaml file in the top left section of the page and selecting 'Export'. Choose the format yaml and press 'Save to file'. 
-- Now we can put the saved .yaml in your new API repository. Rename the downloaded file to OAS.yaml and go to the git page of this repository. Open OAS.yaml on github and overwrite it with your created OAS.yaml or [clone this repo to your computer](#Cloning this repository to your computer) and overwrite it in your favourite IDE and git commit/push it. //TODO could be better written
-- Your created OAS is now in your new API repository, you can always view or edit it through stoplight and export it again.
+- You can create new paths (endpoints) and models (objects) in the bottom left window.
+- To link a path with a model, you can select a path, add or select a response, add or select `body` from that response, and then if this path is for collections, select `array` as a type with a subtype `$ref` or if this path is for a single object select `$ref` as type. You can then find your created model and link it
 
+### Editing your OAS
+
+If you created a new project, you can remove the example paths and models by right-clicking on these in the bottom left window and selecting 'Delete'. You can also keep these examples if you want to.
+
+Firstly, you should create a model (object) which we can link to a path later. Right-click on 'Models' in the bottom left window and select 'New model'. Here you can define an object.
+
+You can create paths (endpoints) by right-clicking on 'Paths' in the bottom left window and selecting 'New Path'. You can add multiple methods to your path by selecting one and pressing the + operation button.
+
+To link a path with a model, you can select a path, add or select a response, add or select `body` from that response, and then if this path is an array of objects select array as type with subtype $ref or if this path is for a single object select $ref as type. In the $ref search box you can find and select your created models.
+
+If you are satisfied with your created API you can save it by selecting 'Publish' in the top left of the page. Next, we want to export this OpenAPI Specification by righting clicking your .yaml file in the top left section of the page and selecting 'Export'. Choose the format YAML and press 'Save to file'.
+
+Add the saved .yaml to your new API repository. Rename the downloaded file to OAS.yaml and go to the git page of this repository. Open OAS.yaml on github and overwrite it with your created OAS.yaml or [clone this repo to your computer](#Cloning this repository to your computer) and overwrite it in your favourite IDE and git commit/push it. //TODO could be better written
+
+Your created OAS is now in your new API repository, you can always view or edit it through Stoplight and export it again.
 
 ## About Common Gateway configuration files
 
@@ -49,29 +60,39 @@ This Common Gateway configuration repository is based on [Petstore](https://redo
 
 We generated the public code for this repository with the Public Code [YAML](https://publiccode-editor.developers.italia.it/) editor
 
-## Running the API locally 
+## Running the API locally
 
-To run and test this API locally you first need to clone this repository to your local computer. You will need to have [Git](https://git-scm.com/download/win) installed or any [Git GUI](https://git-scm.com/downloads/guis) (we recommend [GitKraken](https://www.gitkraken.com)). 
+Running this API can be done through various ways. If you are familiar with Docker and Git, you can execute the commande needed. For those not familair, below is a detailed walkthrough.
 
-You also need [Docker desktop](https://www.docker.com/) installed to run this API dockerized. Docker will run this API on the CommonGateway on dockerized containers so you dont have to worry about having the correct PHP version or other languages/dependencies. 
+```bash
+git clone https://github.com/CommonGateway/PetStoreAPI.git
+cd PetStoreAPI
+docker-compose up
+```
 
-- On the git page of this repository press `Code` and copy the https link. 
+To run and test this API locally you first clone this repository to your local computer. You will need to have [Git](https://git-scm.com/download/win) installed or any [Git GUI](https://git-scm.com/downloads/guis) (we recommend [GitKraken](https://www.gitkraken.com)).
+
+You also need [Docker desktop](https://www.docker.com/) installed to run this API dockerized. Docker will run this API on the Common Gateway on dockerized containers so you dont have to worry about having the correct PHP version or other languages/dependencies.
+
+- On the GitHub page of this repository press `Code` and copy the `https` link.
 
 If you installed Git without GUI:
-- Open a command line interface, for windows you can press `Win+R` and search for `cmd`. 
+
+- Open a command line interface, for windows you can press `Win+R` and search for `cmd`.
 - Execute the command `git clone (link you copied) (directory you want to clone the repository to`, an example: `git clone https://github.com/CommonGateway/PetStoreAPI.git C:\Users\JohnDoe\Projects`.
-- Change to that directory with `cd (directory where repository is cloned to)`, an example: `cd C:\Users\JohnDoe\Projects\PetStore`. 
+- Change to that directory with `cd (directory where repository is cloned to)`, an example: `cd C:\Users\JohnDoe\Projects\PetStore`.
 
 Skip this if you installed Git wihtout GUI and followed those steps, but if you installed Git with GUI (GitKraken):
-- Open GitKraken. 
+
+- Open GitKraken.
 - Select `Clone a repo`.
-- Paste your copied repository link and select the preferred directory. 
-- Open a command line interface, for windows you can press `Win+R` and search for `cmd`. 
-- Change to the chosen directory with `cd (directory where repository is cloned to)`, an example: `cd C:\Users\JohnDoe\Projects\PetStore`. 
+- Paste your copied repository link and select the preferred directory.
+- Open a command line interface, for windows you can press `Win+R` and search for `cmd`.
+- Change to the chosen directory with `cd (directory where repository is cloned to)`, an example: `cd C:\Users\JohnDoe\Projects\PetStore`.
 
 - Execute `docker-compose up`
 - Wait for containers to finish loading.
-- If the php container shows: 'Ready to handle connections' your API is accessible on localhost/api or localhost:80/api. 
+- If the php container shows: 'Ready to handle connections' your API is accessible on localhost/api or localhost:80/api.
 
 If there are any issues when loading the containers try to execute: `docker-compose pull` and then try `docker-compose up` again.
 
@@ -94,7 +115,7 @@ The console should show if the API has been loaded successfully, and then you ca
 // TODO new text about unit testing in gateway (still needs to be build in gateway?)
 GitHub launches an action on every commit that generates a Postman collection and tests the API. You view the action results under `Actions` on the GitHub page.
 
-// TODO this text should be moved to Create or edit your OpenAPI Specification 
+// TODO this text should be moved to Create or edit your OpenAPI Specification
 Make sure that in your OAS definition, there is a `localhost` server defined like:
 
 ```yaml
