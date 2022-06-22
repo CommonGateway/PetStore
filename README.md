@@ -96,6 +96,8 @@ Your created OAS is now in your new API repository. You can always view or edit 
 
 If you want to clone your repository you will need [Git](https://git-scm.com/download/win) or any [Git GUI](https://git-scm.com/downloads/guis) (we recommend [GitKraken](https://www.gitkraken.com).
 
+// TODO ELABORATE
+
 ## About Common Gateway configuration files
 
 Read more.. 
