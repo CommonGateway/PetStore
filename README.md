@@ -100,7 +100,7 @@ If you want to clone your repository you will need [Git](https://git-scm.com/dow
 
 ## About Common Gateway configuration files
 
-Read more.. 
+// TODO ELABORATE
 
 ## Running the API locally
 
@@ -112,6 +112,8 @@ cd PetStoreAPI
 docker-compose up
 ```
 
+
+// TODO move this to Cloning this repository
 
 To run and test this API locally you first clone this repository to your local computer. You will need to have [Git](https://git-scm.com/download/win) installed or any [Git GUI](https://git-scm.com/downloads/guis) (we recommend [GitKraken](https://www.gitkraken.com)).
 
