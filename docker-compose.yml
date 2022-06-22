@@ -128,6 +128,12 @@ services:
     volumes:
       - uc-data:/var/lib/postgresql/data:rw
 
+  rabbitmq:
+    image: rabbitmq:latest
+    environment:
+      - RABBITMQ_DEFAULT_USER=${RABBITMQ_USERNAME}
+      - RABBITMQ_DEFAULT_PASS=${RABBITMQ_PASSWORD}
+
 volumes:
   db-data: {}
   db-mysql: {}
