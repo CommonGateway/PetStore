@@ -5,7 +5,7 @@ Here you can find an example of a Common Gateway configuration for generating an
 - [API Definition (redocly)](https://redocly.github.io/redoc/?url=https://raw.githubusercontent.com/CommonGateway/PetStore/main/OAS.yaml&nocors)
 - [API Definition (file)](https://github.com/CommonGateway/PetStore/blob/main/OAS.yaml)
 - [Public Code](https://github.com/CommonGateway/PetStore/blob/main/publiccode.yaml)
-- [Stoplight.io]([https://conduction.stoplight.io/studio/pet-store:main?](https://conduction.stoplight.io/docs/pet-store/branches/main/ls7mp80wwy88k-swagger-petstore))
+- [Stoplight.io](https://conduction.stoplight.io/docs/pet-store)
 
 ## Create or edit your OpenAPI Specification
 
