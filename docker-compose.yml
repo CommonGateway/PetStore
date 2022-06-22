@@ -8,13 +8,13 @@ x-cache:
 
 services:
 
-  #  gateway-frontend:
-  #    &gateway-frontend
-  #    image: ghcr.io/conductionnl/commonground-gateway-frontend:latest
-  #    depends_on:
-  #      - php
-  #    ports:
-  #      - "83:80"
+  gateway-frontend:
+     &gateway-frontend
+     image: ghcr.io/conductionnl/commonground-gateway-frontend:dev
+     depends_on:
+       - php
+     ports:
+       - "8000:80"
 
   php: &php
     image: ghcr.io/conductionnl/commonground-gateway-php:cleanup
@@ -31,7 +31,7 @@ services:
       - REDIS_PORT=6379
       - APP_REPRO=example
       - APP_ENV=dev
-      - APP_DEBUG=0
+      - APP_DEBUG=1
       - APP_CACHE=true
       - PUBLICCODE=${PUBLICCODE}
       - RABBITMQ_HOST=rabbitmq
@@ -127,6 +127,12 @@ services:
       - POSTGRES_PASSWORD=!ChangeMe!
     volumes:
       - uc-data:/var/lib/postgresql/data:rw
+
+  rabbitmq:
+    image: rabbitmq:latest
+    environment:
+      - RABBITMQ_DEFAULT_USER=${RABBITMQ_USERNAME}
+      - RABBITMQ_DEFAULT_PASS=${RABBITMQ_PASSWORD}
 
 volumes:
   db-data: {}
