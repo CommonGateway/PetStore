@@ -2,7 +2,7 @@
 
 This repository is an example of a [Common Gateway](https://github.com/CommonGateway) configuration for generating an [API](https://www.howtogeek.com/343877/what-is-an-api/). This example has been specifically set up to use as a template to create and use a API or setup and use a existing API. 
 
-To start with creating or setting up a API start with [using this repository as a template](#Using-this-repository-as-a-template). This step will start and guide you through the process.
+To start with creating or setting up a API start with [creating your repository from this template](#creating-your-repository-from-this-template). This step will start and guide you through the process.
 
 Quick links about this API:
 
@@ -11,14 +11,24 @@ Quick links about this API:
 - [Public Code (file about this API and makes it searchable)](https://github.com/CommonGateway/PetStore/blob/main/publiccode.yaml)
 - [Stoplight.io (OAS editing tool)](https://conduction.stoplight.io/docs/pet-store)
 
-## Using this repository as a template
+## Creating your repository from this template
 
 To use this repository as a template, you will need a GitHub account. Make sure you have a GitHub account and are logged in on [GitHub](https://github.com). When you are logged in you can see a `Use this template` button in the top right corner of the repository and select the `user/organisation` and name under which you would like to set up your new repository. After creating your new repository, please follow these steps:
 
-- Replace the OAS file in the repository root with [your own OpenAPI Specification](#your-openapi-specification).
-- Open the `publiccode` file and update the `name`, `description` and `urls` accordingly (dont forget to update the urls in the description section)
-- Open the README.md file alter it to suit your project (don't forget to update the UR: of the status badge)
-If you want your API to be downloadable through the Common Gateway API store make sure that your repository is set to public
+- Replace the OAS file in the repository root with [your own OpenAPI Specification](#your-openapi-specification). (Also read [adding your OAS to your repository](#adding-your-oas-to-your-repository))
+- Go to the GitHub page of your repository.
+- Open the `publiccode.yaml` file.
+- Press the `edit icon` in the top right of the code viewer.
+- Change the following in the file:
+    1. `name` to the name of your API.
+    2. `url` to the url of this GitHub repository. 
+    3. `description` to the description of your API.
+    4. `releaseDate` to a earlier date if already released or TBA (to be announced).
+    5. Scroll down to `description`
+    6. Change both for `en` and `nl` the `shortDescription`, the `documentation` to `https://redocly.github.io/redoc/?url=https://raw.githubusercontent.com/{yourOrganizationOrUserName}/{yourRepositoryName}/main/OAS.yaml&nocors` and the `apiDocumentation` to `https://raw.githubusercontent.com/{yourOrganizationOrUserName}/{yourRepositoryName}/main/OAS.yaml`
+    7. Enter a nice commit message and press `Commit changes` below the code viewer.
+- Open the README.md file and alter it to suit your project (don't forget to update the URL of the status badge)
+- If you want your API to be downloadable through the Common Gateway API store make sure that your repository is set to public
 
 
 ## Your OpenAPI Specification
@@ -99,7 +109,6 @@ git clone https://github.com/CommonGateway/PetStoreAPI.git
 cd PetStoreAPI
 docker-compose up
 ```
-
 
 
 To run and test this API locally you first clone this repository to your local computer. You will need to have [Git](https://git-scm.com/download/win) installed or any [Git GUI](https://git-scm.com/downloads/guis) (we recommend [GitKraken](https://www.gitkraken.com)).
