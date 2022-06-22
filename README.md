@@ -70,21 +70,25 @@ You have now downloaded your OpenAPI Specification (OAS). Continue to [adding yo
 
 ### Adding your OAS to your repository
 
-Rename the downloaded OAS file to OAS.yaml and go to the git page of this repository. Open OAS.yaml on github and overwrite it with your created OAS.yaml.
+Now you want to have your OAS in your repository, so that the CommonGateway can work with it.
+You can change the OAS in 2 ways. The simplest is the following for those who don't have Git or a Git GUI, and no IDE installed. 
+
+- One the GitHub page of your API open the OAS.yaml and press the `edit icon` in the top right of the screen.
+- Open your local OAS file and copy its content.
+- Paste the copied content into the OAS.yaml from your GitHub repository, overwriting its content.
+- Fill a basic commit message in the bottom of the screen like `OAS updated` and press `commit changes`.
+
+For those familiar with Git and their IDE, you can [clone this repository](#cloning-your-repository) and overwrite the OAS.yaml with your own OAS. Don't forget to commit push.
 
 Your created OAS is now in your new API repository. You can always view or edit it through Stoplight and export it again, then overwriting the OAS.yaml in your repository.
 
-// TODO how to add oas to repository
+## Cloning your repository
+
+If you want to clone your repository you will need [Git](https://git-scm.com/download/win) or any [Git GUI](https://git-scm.com/downloads/guis) (we recommend [GitKraken](https://www.gitkraken.com).
 
 ## About Common Gateway configuration files
 
-Read more..
-
-<!-- ## Creating OAS documentation
-
-This Common Gateway configuration repository is based on [Petstore](https://redocly.github.io/redoc/). Petstore is an example Open API Specification from our friends at [Redocly](https://redocly.com/docs/). We recommend using [Stoplight](https://stoplight.io) for maintaining OAS specifications. You can find the Stoplight project for the Pet Store [here](https://conduction.stoplight.io/docs/pet-store/branches/main/ls7mp80wwy88k-swagger-petstore). For convenience, a copy of the Pet store OAS is found [here](https://github.com/CommonGateway/PetStore/blob/main/OAS.yaml).
-
-We generated the public code for this repository with the Public Code [YAML](https://publiccode-editor.developers.italia.it/) editor -->
+Read more.. 
 
 ## Running the API locally
 
@@ -95,6 +99,8 @@ git clone https://github.com/CommonGateway/PetStoreAPI.git
 cd PetStoreAPI
 docker-compose up
 ```
+
+
 
 To run and test this API locally you first clone this repository to your local computer. You will need to have [Git](https://git-scm.com/download/win) installed or any [Git GUI](https://git-scm.com/downloads/guis) (we recommend [GitKraken](https://www.gitkraken.com)).
 
