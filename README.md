@@ -1,15 +1,39 @@
 # Pet Store API
 
-Here you can find an example of a Common Gateway configuration for generating an API. This example has been specifically set up to use as a template. Read more about that under [Using this repository as a template](#Using this repository as a temple).
+This repository is an example of a [Common Gateway](https://github.com/CommonGateway) configuration for generating an [API](https://www.howtogeek.com/343877/what-is-an-api/). This example has been specifically set up to use as a template to create and use a API or setup and use a existing API. 
 
-- [API Definition (redocly)](https://redocly.github.io/redoc/?url=https://raw.githubusercontent.com/CommonGateway/PetStore/main/OAS.yaml&nocors)
-- [API Definition (file)](https://github.com/CommonGateway/PetStore/blob/main/OAS.yaml)
-- [Public Code](https://github.com/CommonGateway/PetStore/blob/main/publiccode.yaml)
-- [Stoplight.io](https://conduction.stoplight.io/docs/pet-store)
+To start with creating or setting up a API start with [creating your repository from this template](#creating-your-repository-from-this-template). This step will start and guide you through the process.
 
-## Create or edit your OpenAPI Specification
+Quick links about this API:
 
-What is OpenAPI Specification
+- [API Documentation (redocly is a API documentation generator)](https://redocly.github.io/redoc/?url=https://raw.githubusercontent.com/CommonGateway/PetStore/main/OAS.yaml&nocors)
+- [API Definition (yaml or json file)](https://github.com/CommonGateway/PetStore/blob/main/OAS.yaml)
+- [Public Code (file about this API and makes it searchable)](https://github.com/CommonGateway/PetStore/blob/main/publiccode.yaml)
+- [Stoplight.io (OAS editing tool)](https://conduction.stoplight.io/docs/pet-store)
+
+## Creating your repository from this template
+
+To use this repository as a template, you will need a GitHub account. Make sure you have a GitHub account and are logged in on [GitHub](https://github.com). When you are logged in you can see a `Use this template` button in the top right corner of the repository and select the `user/organisation` and name under which you would like to set up your new repository. After creating your new repository, please follow these steps:
+
+- Replace the OAS file in the repository root with [your own OpenAPI Specification](#your-openapi-specification). (Also read [adding your OAS to your repository](#adding-your-oas-to-your-repository))
+- Go to the GitHub page of your repository.
+- Open the `publiccode.yaml` file.
+- Press the `edit icon` in the top right of the code viewer.
+- Change the following in the file:
+    1. `name` to the name of your API.
+    2. `url` to the url of this GitHub repository. 
+    3. `description` to the description of your API.
+    4. `releaseDate` to a earlier date if already released or TBA (to be announced).
+    5. Scroll down to `description`
+    6. Change both for `en` and `nl` the `shortDescription`, the `documentation` to `https://redocly.github.io/redoc/?url=https://raw.githubusercontent.com/{yourOrganizationOrUserName}/{yourRepositoryName}/main/OAS.yaml&nocors` and the `apiDocumentation` to `https://raw.githubusercontent.com/{yourOrganizationOrUserName}/{yourRepositoryName}/main/OAS.yaml`
+    7. Enter a nice commit message and press `Commit changes` below the code viewer.
+- Open the README.md file and alter it to suit your project (don't forget to update the URL of the status badge)
+- If you want your API to be downloadable through the Common Gateway API store make sure that your repository is set to public
+
+
+## Your OpenAPI Specification
+
+What is a OpenAPI Specification
 
 The OpenApi Specification(OAS) defines a standard, language-agnostic interface to RESTful APIs, allowing humans and computers to discover and understand the service's capabilities without access to source code, documentation, or network traffic inspection. When properly defined, a consumer can understand and interact with the remote service with minimal implementation logic.
 
@@ -17,48 +41,66 @@ Documentation generation tools can then use an OpenAPI definition to display the
 
 This template uses the (OAS) as an API definition for the reasons above.
 
-### Creating the OAS
+If you don't have a API OAS yet you can continue with [creating your oas](#creating-your-oas), if you already have a OAS but you want to edit you can go to [editing your oas](#editing-your-oas). If you have a API OAS defintion which is already ready, you can go to continue to [adding your OAS to your repository](#adding-your-oas-to-your-repository).
+
+### Creating your OAS
 
 Writing the API standard yourself is very error-prone. We recommend using [Stoplight](https://stoplight.io) for the automatic generation of an OAS, but there's also [Postman](https://www.postman.com). For checking, there are also editors, like <https://editor.swagger.io>.
 
 The OAS can be defined in both JSON and YAML. It shouldn't make a difference in most cases, and although we often work from a YAML-first basis, there have been times were working with JSON was superior.
 
-To create an OAS with [Stoplight](https://stoplight.io/), follow these steps:
+To create your OAS with [Stoplight](https://stoplight.io/), follow these steps:
 
 - Register or log in on Stoplight.
-- Create a workspace
+- Create a workspace or use a existing one.
 - Navigate to projects in the top navigation or go to yourworkspacename.stoplight.io/admin/projects.
 - Create a new project with the `New Project` button in the top right corner.
-- If you want to create a new API, create a blank project with a proper name.
-- If you want to edit an already existing API and you have the OpenApi file for that API, you can choose to `Import OpenAPI file`
+- To create a new API, create a blank project with a proper name.
 - You can create new paths (endpoints) and models (objects) in the bottom left window.
-- To link a path with a model, you can select a path, add or select a response, add or select `body` from that response, and then if this path is for collections, select `array` as a type with a subtype `$ref` or if this path is for a single object select `$ref` as type. You can then find your created model and link it
+- To link a path with a model, you can select a path, add or select a response, add or select `body` from that response, and then if this path is for collections, select `array` as a type with a subtype `$ref` or if this path is for a single object select `$ref` as type. You can then find your created model and link it.
+- If you are satisfied with your created API you can save it by selecting 'Publish' in the top left of the page. Next, we want to export this OpenAPI Specification by righting clicking your .yaml file in the top left section of the page and selecting 'Export'. Choose the format YAML and press 'Save to file'.
+
+You have now downloaded your OpenAPI Specification (OAS). Continue to [adding your OAS to your repository](#adding-your-oas-to-your-repository).
 
 ### Editing your OAS
 
-If you created a new project, you can remove the example paths and models by right-clicking on these in the bottom left window and selecting 'Delete'. You can also keep these examples if you want to.
+To edit your OAS with [Stoplight](https://stoplight.io/), follow these steps:
 
-Firstly, you should create a model (object) which we can link to a path later. Right-click on 'Models' in the bottom left window and select 'New model'. Here you can define an object.
+- Register or log in on Stoplight.
+- Create a workspace or use a existing one.
+- Navigate to projects in the top navigation or go to yourworkspacename.stoplight.io/admin/projects.
+- Create a new project with the `New Project` button in the top right corner.
+- To edit an already existing API and you have the OpenAPI file for that API, you can choose to `Import OpenAPI file`.
+- Firstly, you should create a model (object) which we can link to a path later. Right-click on 'Models' in the bottom left window and select 'New model'. Here you can define an object.
+- You can create paths (endpoints) by right-clicking on 'Paths' in the bottom left window and selecting 'New Path'. You can add multiple methods to your path by selecting one and pressing the + operation button.
+- To link a path with a model, you can select a path, add or select a response, add or select `body` from that response, and then if this path is an array of objects select `array` as type with subtype `$ref` or if this path is for a single object select `$ref` as type. In the `$ref` search box you can find and select your created models.
+- If you are satisfied with your created API you can save it by selecting 'Publish' in the top left of the page. Next, we want to export this OpenAPI Specification by righting clicking your .yaml file in the top left section of the page and selecting 'Export'. Choose the format YAML or JSON and press 'Save to file'.
 
-You can create paths (endpoints) by right-clicking on 'Paths' in the bottom left window and selecting 'New Path'. You can add multiple methods to your path by selecting one and pressing the + operation button.
+You have now downloaded your OpenAPI Specification (OAS). Continue to [adding your OAS to your repository](#adding-your-oas-to-your-repository).
 
-To link a path with a model, you can select a path, add or select a response, add or select `body` from that response, and then if this path is an array of objects select array as type with subtype $ref or if this path is for a single object select $ref as type. In the $ref search box you can find and select your created models.
+### Adding your OAS to your repository
 
-If you are satisfied with your created API you can save it by selecting 'Publish' in the top left of the page. Next, we want to export this OpenAPI Specification by righting clicking your .yaml file in the top left section of the page and selecting 'Export'. Choose the format YAML and press 'Save to file'.
+Now you want to have your OAS in your repository, so that the CommonGateway can work with it.
+You can change the OAS in 2 ways. The simplest is the following for those who don't have Git or a Git GUI, and no IDE installed. 
 
-Add the saved .yaml to your new API repository. Rename the downloaded file to OAS.yaml and go to the git page of this repository. Open OAS.yaml on github and overwrite it with your created OAS.yaml or [clone this repo to your computer](#Cloning this repository to your computer) and overwrite it in your favourite IDE and git commit/push it. //TODO could be better written
+- One the GitHub page of your API open the OAS.yaml and press the `edit icon` in the top right of the screen.
+- Open your local OAS file and copy its content.
+- Paste the copied content into the OAS.yaml from your GitHub repository, overwriting its content.
+- Fill a basic commit message in the bottom of the screen like `OAS updated` and press `commit changes`.
 
-Your created OAS is now in your new API repository, you can always view or edit it through Stoplight and export it again.
+For those familiar with Git and their IDE, you can [clone this repository](#cloning-your-repository) and overwrite the OAS.yaml with your own OAS. Don't forget to commit push.
+
+Your created OAS is now in your new API repository. You can always view or edit it through Stoplight and export it again, then overwriting the OAS.yaml in your repository.
+
+## Cloning your repository
+
+If you want to clone your repository you will need [Git](https://git-scm.com/download/win) or any [Git GUI](https://git-scm.com/downloads/guis) (we recommend [GitKraken](https://www.gitkraken.com).
+
+// TODO ELABORATE
 
 ## About Common Gateway configuration files
 
-Read more..
-
-## Creating OAS documentation
-
-This Common Gateway configuration repository is based on [Petstore](https://redocly.github.io/redoc/). Petstore is an example Open API Specification from our friends at [Redocly](https://redocly.com/docs/). We recommend using [Stoplight](https://stoplight.io) for maintaining OAS specifications. You can find the Stoplight project for the Pet Store [here](https://conduction.stoplight.io/docs/pet-store/branches/main/ls7mp80wwy88k-swagger-petstore). For convenience, a copy of the Pet store OAS is found [here](https://github.com/CommonGateway/PetStore/blob/main/OAS.yaml).
-
-We generated the public code for this repository with the Public Code [YAML](https://publiccode-editor.developers.italia.it/) editor
+// TODO ELABORATE
 
 ## Running the API locally
 
@@ -69,6 +111,9 @@ git clone https://github.com/CommonGateway/PetStoreAPI.git
 cd PetStoreAPI
 docker-compose up
 ```
+
+
+// TODO move this to Cloning this repository
 
 To run and test this API locally you first clone this repository to your local computer. You will need to have [Git](https://git-scm.com/download/win) installed or any [Git GUI](https://git-scm.com/downloads/guis) (we recommend [GitKraken](https://www.gitkraken.com)).
 
@@ -123,11 +168,3 @@ servers:
  - url: localhost/api
 ```
 
-## Using this repository as a template
-
-To use this repository as a template, hit `Use this template` in the top right corner of the repository and select the `user/organisation` and name under which you would like to set up your new repository. After creating your new repository, please follow these steps:
-
-- Replace the OAS file in the repository root with your own OpenAPI Specification (see [create or edit your OpenAPI Specification](#Create or edit your OpenAPI Specification) if you dont have a OAS).
-- Open the `publiccode` file and update the `name`, `description` and `urls` accordingly (dont forget to update the urls in the description section)
-- Open the README.md file alter it to suit your project (don't forget to update the UR: of the status badge)
-If you want your API to be downloadable through the Common Gateway API store make sure that your repository is set to public
