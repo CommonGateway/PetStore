@@ -81,12 +81,13 @@ You have now downloaded your OpenAPI Specification (OAS). Continue to [adding yo
 ### Adding your OAS to your repository
 
 Now you want to have your OAS in your repository, so that the CommonGateway can work with it.
-You can change the OAS in 2 ways. The simplest is the following for those who don't have Git or a Git GUI, and no IDE installed. 
+You can add the OAS in 2 ways. The simplest is the following for those who don't have Git or a Git GUI, and are not familair with a IDE. 
 
-- One the GitHub page of your API open the OAS.yaml and press the `edit icon` in the top right of the screen.
+- One the GitHub page of your API open the OAS.yaml and press the `edit icon` (pencil) in the top right of the code viewer.
 - Open your local OAS file and copy its content.
-- Paste the copied content into the OAS.yaml from your GitHub repository, overwriting its content.
-- Fill a basic commit message in the bottom of the screen like `OAS updated` and press `commit changes`.
+- Paste the copied content into the OAS.yaml you opened on GitHub, overwriting its content.
+- If your OAS is a .json file make sure to change the OAS.yaml to OAS.json.
+- Fill a basic commit message in the bottom of the screen like `OAS updated` and press `Commit changes`.
 
 For those familiar with Git and their IDE, you can [clone this repository](#cloning-your-repository) and overwrite the OAS.yaml with your own OAS. Don't forget to commit push.
 
@@ -96,29 +97,6 @@ Your created OAS is now in your new API repository. You can always view or edit 
 
 If you want to clone your repository you will need [Git](https://git-scm.com/download/win) or any [Git GUI](https://git-scm.com/downloads/guis) (we recommend [GitKraken](https://www.gitkraken.com).
 
-// TODO ELABORATE
-
-## About Common Gateway configuration files
-
-// TODO ELABORATE
-
-## Running the API locally
-
-Running this API can be done through various ways. If you are familiar with Docker and Git, you can execute the commande needed. For those not familair, below is a detailed walkthrough.
-
-```bash
-git clone https://github.com/CommonGateway/PetStoreAPI.git
-cd PetStoreAPI
-docker-compose up
-```
-
-
-// TODO move this to Cloning this repository
-
-To run and test this API locally you first clone this repository to your local computer. You will need to have [Git](https://git-scm.com/download/win) installed or any [Git GUI](https://git-scm.com/downloads/guis) (we recommend [GitKraken](https://www.gitkraken.com)).
-
-You also need [Docker desktop](https://www.docker.com/) installed to run this API dockerized. Docker will run this API on the Common Gateway on dockerized containers so you dont have to worry about having the correct PHP version or other languages/dependencies.
-
 - On the GitHub page of this repository press `Code` and copy the `https` link.
 
 If you installed Git without GUI:
@@ -127,21 +105,68 @@ If you installed Git without GUI:
 - Execute the command `git clone (link you copied) (directory you want to clone the repository to`, an example: `git clone https://github.com/CommonGateway/PetStoreAPI.git C:\Users\JohnDoe\Projects`.
 - Change to that directory with `cd (directory where repository is cloned to)`, an example: `cd C:\Users\JohnDoe\Projects\PetStore`.
 
-Skip this if you installed Git wihtout GUI and followed those steps, but if you installed Git with GUI (GitKraken):
+Skip this if you already installed Git without GUI and followed the above steps, but if you installed Git with a GUI (GitKraken) and want to clone with that GUI:
 
 - Open GitKraken.
 - Select `Clone a repo`.
 - Paste your copied repository link and select the preferred directory.
+
+Now you have your API repository cloned locally. You can view it with a file explorer or any IDE at you chosen directory. If you want to test your API locally you can continue with [running the API locally](#running-the-api-locally).
+
+## About Common Gateway configuration files
+
+// TODO ELABORATE
+
+## Running the API locally
+
+Running this API can be done through various ways. Make sure you firstly have this API [cloned to your computer](#cloning-your-repository). 
+If you are familiar with Docker, Git and a http client you can execute the following commands and tests your API on localhost/api.
+
+```bash
+git clone https://github.com/CommonGateway/PetStoreAPI.git
+cd PetStoreAPI
+docker-compose up
+```
+
+For those not familiar, below is a detailed walkthrough.
+
+You will need [Docker desktop](https://www.docker.com/) installed to run this API dockerized. Docker will run this API on the Common Gateway on dockerized containers so you dont have to worry about having the correct PHP version or other languages/dependencies.
+
 - Open a command line interface, for windows you can press `Win+R` and search for `cmd`.
 - Change to the chosen directory with `cd (directory where repository is cloned to)`, an example: `cd C:\Users\JohnDoe\Projects\PetStore`.
 
+- Execute `docker-compose pull`
 - Execute `docker-compose up`
 - Wait for containers to finish loading.
 - If the php container shows: 'Ready to handle connections' your API is accessible on localhost/api or localhost:80/api.
 
-If there are any issues when loading the containers try to execute: `docker-compose pull` and then try `docker-compose up` again.
+If there are any issues when loading the containers try to execute: `docker-compose pull` and then try `docker-compose up` again. Otherwise continue to [testing with http requests](#testing-with-http-requests).
 
-// TODO How to make API calls to your API / test it
+### Testing with http requests
+
+To test your API you will need a [http](https://developer.mozilla.org/en-US/docs/Web/HTTP/Overview) request client. We recommend [Postman](https://www.postman.com) but any client will suffice. Here is a list if you wanwt to find a client yourself: [https://rapidapi.com/blog/best-api-clients/](https://rapidapi.com/blog/best-api-clients/).
+
+In this example we will use Postman.
+
+- Sign up or login on [Postman](https://www.postman.com).
+- [Download Postman](https://www.postman.com/downloads/).
+- Open Postman.
+- Postman will give you a workspace.
+- Go to `APIs` in the left menu.
+- Press the `Create an API` next to the left menu.
+- Switch to the `Import` tab.
+- Select the bottom option `Select files`.
+- Choose your OAS.yaml (or .json) and upload it.
+- Click `Import` in the bottom right of the modal.
+- Postman has now generated a test collection for your API.
+- Go to `Collections` in the left menu. 
+- Open your new collection and check out some requests.
+- Make sure that your requests for a single object have a proper id.
+- Hit the `Send` button in the top right of the page.
+- Check the result in the bottom response body.
+
+Based on your request the response may differ. You know now how to test your API.
+If you change your API and your OAS, you can re-import that file and re-generate a collection.
 
 ## Running the API online
 
@@ -153,7 +178,7 @@ If set you can run the following command in a PHP pod:
 
 `bin/console app:load-publiccodes`
 
-The console should show if the API has been loaded successfully, and then you can make API requests to `[yourdomain]/api`.
+The console should show if the API has been loaded successfully, and then you can make API http requests the `[yourdomain]/api`. If you need more info about testing your API, read [testing with http requests](#testing-with-http-requests).
 
 ## (Unit) Testing the API
 
