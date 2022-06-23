@@ -13,12 +13,12 @@ Quick links about this API:
 
 ## Creating your repository from this template
 
-To use this repository as a template, you will need a GitHub account. Make sure you have a GitHub account and are logged in on [GitHub](https://github.com). When you are logged in you can see a `Use this template` button in the top right corner of the repository and select the `user/organisation` and name under which you would like to set up your new repository. After creating your new repository, please follow these steps:
+To use this repository as a template, you will need a GitHub account. Make sure you have a GitHub account and are logged in on [GitHub](https://github.com). When you are logged in you can see a `Use this template` button in the top right corner of [this repository](https://github.com/CommonGateway/PetStoreAPI). Then select the owner and fill in a nice name for your new repository. After creating your new repository, please follow these steps:
 
 - Go to the GitHub page of your repository.
 - Replace the OAS.yaml (or .json) file in the repository root with [your own OpenAPI Specification](#your-openapi-specification). (Also read [adding your OAS to your repository](#adding-your-oas-to-your-repository))
 - Open the `publiccode.yaml` file.
-- Press the `edit icon` in the top right of the code viewer.
+- Press the `edit icon` (pencil) in the top right of the code viewer.
 - Change the following in the file:
     1. `name` to the name of your API.
     2. `url` to the url of this GitHub repository. 
@@ -26,16 +26,18 @@ To use this repository as a template, you will need a GitHub account. Make sure 
     4. `releaseDate` to a earlier date if already released or TBA (to be announced).
     5. Scroll down to `description`
     6. Change both for `en` and `nl` the `shortDescription`, the `documentation` to `https://redocly.github.io/redoc/?url=https://raw.githubusercontent.com/{yourOrganizationOrUserName}/{yourRepositoryName}/main/OAS.yaml&nocors` and the `apiDocumentation` to `https://raw.githubusercontent.com/{yourOrganizationOrUserName}/{yourRepositoryName}/main/OAS.yaml`
-    7. Enter a nice commit message and press `Commit changes` below the code viewer.
+    7. Change `OAS.yaml` to `OAS.json` if your OAS is a json file.
+    8. Enter a nice commit message and press `Commit changes` below the code viewer.
 - Open the README.md file and alter it to suit your project (don't forget to update the URL of the status badge)
 - If you want your API to be downloadable through the Common Gateway API store make sure that your repository is set to public
 - Open the OAS.yaml (or .json) in your repository on GitHub.
 - Click the `raw` button on the top right of the code viewer.
 - Copy the url from your browser.
-- Open .env from your repository.
+- Open .env from your repository and press the `edit icon` (pencil) in the top right of the code viewer.
 - Scroll to the bottom and find `PUBLICCODE`.
 - Overwrite the url with your OAS url.
 
+After following these steps your repository should be set up properly. To test your repository locally read [running the api locally](#running-the-api-locally).
 
 ## Your OpenAPI Specification
 
@@ -57,14 +59,18 @@ The OAS can be defined in both JSON and YAML. It shouldn't make a difference in 
 
 To create your OAS with [Stoplight](https://stoplight.io/), follow these steps:
 
-- Register or log in on Stoplight.
+- Register or log in on [Stoplight](https://stoplight.io/).
 - Create a workspace or use a existing one.
 - Navigate to projects in the top navigation or go to yourworkspacename.stoplight.io/admin/projects.
 - Create a new project with the `New Project` button in the top right corner.
 - To create a new API, create a blank project with a proper name.
-- You can create new paths (endpoints) and models (objects) in the bottom left window.
+- Press the `API` button in the mid left window and fill in your API name, then press create.
+- Go to `Overview`, find `Servers` and make sure there is 1 server with value `http://localhost`.
+- Firstly, you can remove all standard Paths. Right click one in the bottom left and press `Delete Path`. The same should be done for `Models` except if you would like to keep the example.
+- Then you should create a model (object) which we can link to a path later. Right-click on 'Models' in the bottom left window and select 'New model'. Here you can define an object.
+- You can create paths (endpoints) by right-clicking on 'Paths' in the bottom left window and selecting 'New Path'. You can add multiple methods to your path by selecting one and pressing the + operation button.
 - To link a path with a model, you can select a path, add or select a response, add or select `body` from that response, and then if this path is for collections, select `array` as a type with a subtype `$ref` or if this path is for a single object select `$ref` as type. You can then find your created model and link it.
-- If you are satisfied with your created API you can save it by selecting 'Publish' in the top left of the page. Next, we want to export this OpenAPI Specification by righting clicking your .yaml file in the top left section of the page and selecting 'Export'. Choose the format YAML and press 'Save to file'.
+- If you are satisfied with your created API you can save it by selecting `Publish` in the top left of the page. Next, we want to export this OpenAPI Specification by righting clicking your .yaml file in the top left section of the page and selecting `Export`. Choose the format YAML and press `Save to file`.
 
 You have now downloaded your OpenAPI Specification (OAS). Continue to [adding your OAS to your repository](#adding-your-oas-to-your-repository).
 
@@ -77,10 +83,11 @@ To edit your OAS with [Stoplight](https://stoplight.io/), follow these steps:
 - Navigate to projects in the top navigation or go to yourworkspacename.stoplight.io/admin/projects.
 - Create a new project with the `New Project` button in the top right corner.
 - To edit an already existing API and you have the OpenAPI file for that API, you can choose to `Import OpenAPI file`.
+- Go to `Overview`, find `Servers` and make sure there is 1 server with value `http://localhost`.
 - Firstly, you should create a model (object) which we can link to a path later. Right-click on 'Models' in the bottom left window and select 'New model'. Here you can define an object.
 - You can create paths (endpoints) by right-clicking on 'Paths' in the bottom left window and selecting 'New Path'. You can add multiple methods to your path by selecting one and pressing the + operation button.
 - To link a path with a model, you can select a path, add or select a response, add or select `body` from that response, and then if this path is an array of objects select `array` as type with subtype `$ref` or if this path is for a single object select `$ref` as type. In the `$ref` search box you can find and select your created models.
-- If you are satisfied with your created API you can save it by selecting 'Publish' in the top left of the page. Next, we want to export this OpenAPI Specification by righting clicking your .yaml file in the top left section of the page and selecting 'Export'. Choose the format YAML or JSON and press 'Save to file'.
+- If you are satisfied with your created API you can save it by selecting `Publish` in the top left of the page. Next, we want to export this OpenAPI Specification by righting clicking your .yaml file in the top left section of the page beneath `Reference` and selecting `Export`. Choose the format YAML or JSON and press `Save to file`.
 
 You have now downloaded your OpenAPI Specification (OAS). Continue to [adding your OAS to your repository](#adding-your-oas-to-your-repository).
 
@@ -186,14 +193,6 @@ The console should show if the API has been loaded successfully, and then you ca
 
 // TODO new text about unit testing in gateway (still needs to be build in gateway?)
 GitHub launches an action on every commit that generates a Postman collection and tests the API. You view the action results under `Actions` on the GitHub page.
-
-// TODO this text should be moved to Create or edit your OpenAPI Specification
-Make sure that in your OAS definition, there is a `localhost` server defined like:
-
-```yaml
-servers:
- - url: localhost/api
-```
 
 ## About Common Gateway configuration files
 
