@@ -15,8 +15,8 @@ Quick links about this API:
 
 To use this repository as a template, you will need a GitHub account. Make sure you have a GitHub account and are logged in on [GitHub](https://github.com). When you are logged in you can see a `Use this template` button in the top right corner of the repository and select the `user/organisation` and name under which you would like to set up your new repository. After creating your new repository, please follow these steps:
 
-- Replace the OAS file in the repository root with [your own OpenAPI Specification](#your-openapi-specification). (Also read [adding your OAS to your repository](#adding-your-oas-to-your-repository))
 - Go to the GitHub page of your repository.
+- Replace the OAS.yaml (or .json) file in the repository root with [your own OpenAPI Specification](#your-openapi-specification). (Also read [adding your OAS to your repository](#adding-your-oas-to-your-repository))
 - Open the `publiccode.yaml` file.
 - Press the `edit icon` in the top right of the code viewer.
 - Change the following in the file:
@@ -29,6 +29,12 @@ To use this repository as a template, you will need a GitHub account. Make sure 
     7. Enter a nice commit message and press `Commit changes` below the code viewer.
 - Open the README.md file and alter it to suit your project (don't forget to update the URL of the status badge)
 - If you want your API to be downloadable through the Common Gateway API store make sure that your repository is set to public
+- Open the OAS.yaml (or .json) in your repository on GitHub.
+- Click the `raw` button on the top right of the code viewer.
+- Copy the url from your browser.
+- Open .env from your repository.
+- Scroll to the bottom and find `PUBLICCODE`.
+- Overwrite the url with your OAS url.
 
 
 ## Your OpenAPI Specification
@@ -91,7 +97,7 @@ You can add the OAS in 2 ways. The simplest is the following for those who don't
 
 For those familiar with Git and their IDE, you can [clone this repository](#cloning-your-repository) and overwrite the OAS.yaml with your own OAS. Don't forget to commit push.
 
-Your created OAS is now in your new API repository. You can always view or edit it through Stoplight and export it again, then overwriting the OAS.yaml in your repository.
+Your created OAS is now in your new API repository. You can always view or edit it through Stoplight and export it again, then overwriting the OAS.yaml in your repository. You can continue with the other steps from [this guide](#creating-your-repository-from-this-template).
 
 ## Cloning your repository
 
@@ -112,10 +118,6 @@ Skip this if you already installed Git without GUI and followed the above steps,
 - Paste your copied repository link and select the preferred directory.
 
 Now you have your API repository cloned locally. You can view it with a file explorer or any IDE at you chosen directory. If you want to test your API locally you can continue with [running the API locally](#running-the-api-locally).
-
-## About Common Gateway configuration files
-
-// TODO ELABORATE
 
 ## Running the API locally
 
@@ -144,7 +146,7 @@ If there are any issues when loading the containers try to execute: `docker-comp
 
 ### Testing with http requests
 
-To test your API you will need a [http](https://developer.mozilla.org/en-US/docs/Web/HTTP/Overview) request client. We recommend [Postman](https://www.postman.com) but any client will suffice. Here is a list if you wanwt to find a client yourself: [https://rapidapi.com/blog/best-api-clients/](https://rapidapi.com/blog/best-api-clients/).
+To test your API you will need a [http](https://developer.mozilla.org/en-US/docs/Web/HTTP/Overview) request client. We recommend [Postman](https://www.postman.com) but any client will suffice. Here is a list if you want to find a client yourself: [https://rapidapi.com/blog/best-api-clients/](https://rapidapi.com/blog/best-api-clients/).
 
 In this example we will use Postman.
 
@@ -192,4 +194,8 @@ Make sure that in your OAS definition, there is a `localhost` server defined lik
 servers:
  - url: localhost/api
 ```
+
+## About Common Gateway configuration files
+
+// TODO ELABORATE
 
