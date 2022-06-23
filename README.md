@@ -178,6 +178,7 @@ In this example we will use Postman.
 - Go to `Collections` in the left menu. 
 - Open your new collection and check out some requests.
 - Make sure that your requests for a single object have a proper id.
+- Make sure with POST and PUT requests that the body is correct. Postman doesn't uses your example bodies, so integer properties and enums and other validations should be set accordingly.
 - Hit the `Send` button in the top right of the page.
 - Check the result in the bottom response body.
 
