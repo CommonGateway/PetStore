@@ -139,7 +139,26 @@ You will need [Docker desktop](https://www.docker.com/) installed to run this AP
 
 If there are any issues when loading the containers try to execute: `docker-compose pull` and then try `docker-compose up` again.
 
-// TODO How to make API calls to your API / test it
+To test your API you will need a [http](https://developer.mozilla.org/en-US/docs/Web/HTTP/Overview) request client. We recommend [Postman](https://www.postman.com) but any client will suffice. Here is a list if you wanwt to find a client yourself: [https://rapidapi.com/blog/best-api-clients/](https://rapidapi.com/blog/best-api-clients/).
+
+In this example we will use Postman.
+
+- Sign up or login on [Postman](https://www.postman.com).
+- Postman will give you a online workspace.
+- Go to `APIs` in the left menu.
+- Press the `Create an API` next to the left menu.
+- Switch to the `Import` tab.
+- Select the bottom option `Select files`.
+- Choose your OAS.yaml (or .json) and upload it.
+- Click `Import` in the bottom right of the modal.
+- Postman has now generated a test collection for your API.
+- Go to `Collections` in the left menu. 
+- Open your new collection and check out some requests.
+- Make sure that your requests for a single object have a proper id.
+- Hit the `Send` button in the top right of the page.
+- Check the result in the bottom response body.
+
+Based on your request the response may differ. You know now how to test your API.
 
 ## Running the API online
 
