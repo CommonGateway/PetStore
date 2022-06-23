@@ -119,13 +119,16 @@ Now you have your API repository cloned locally. You can view it with a file exp
 
 ## Running the API locally
 
-Running this API can be done through various ways. Make sure you firstly have this API [cloned to your computer](#cloning-your-repository). If you are familiar with Docker and Git, you can execute the following commands. For those not familair, below is a detailed walkthrough.
+Running this API can be done through various ways. Make sure you firstly have this API [cloned to your computer](#cloning-your-repository). 
+If you are familiar with Docker, Git and a http client you can execute the following commands and tests your API on localhost/api.
 
 ```bash
 git clone https://github.com/CommonGateway/PetStoreAPI.git
 cd PetStoreAPI
 docker-compose up
 ```
+
+For those not familiar, below is a detailed walkthrough.
 
 You will need [Docker desktop](https://www.docker.com/) installed to run this API dockerized. Docker will run this API on the Common Gateway on dockerized containers so you dont have to worry about having the correct PHP version or other languages/dependencies.
 
