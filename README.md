@@ -144,7 +144,9 @@ To test your API you will need a [http](https://developer.mozilla.org/en-US/docs
 In this example we will use Postman.
 
 - Sign up or login on [Postman](https://www.postman.com).
-- Postman will give you a online workspace.
+- [Download Postman](https://www.postman.com/downloads/).
+- Open Postman.
+- Postman will give you a workspace.
 - Go to `APIs` in the left menu.
 - Press the `Create an API` next to the left menu.
 - Switch to the `Import` tab.
@@ -159,6 +161,7 @@ In this example we will use Postman.
 - Check the result in the bottom response body.
 
 Based on your request the response may differ. You know now how to test your API.
+If you change your API and your OAS, you can re-import that file and re-generate a collection.
 
 ## Running the API online
 
