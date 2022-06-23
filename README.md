@@ -35,7 +35,7 @@ To use this repository as a template, you will need a GitHub account. Make sure 
 - Copy the url from your browser.
 - Open .env from your repository and press the `edit icon` (pencil) in the top right of the code viewer.
 - Scroll to the bottom and find `PUBLICCODE`.
-- Overwrite the url with your OAS url.
+- Overwrite the url with your publiccode url.
 
 After following these steps your repository should be set up properly.
 To test your repository locally read [running the api locally](#running-the-api-locally).
