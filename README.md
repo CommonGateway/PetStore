@@ -30,14 +30,16 @@ To use this repository as a template, you will need a GitHub account. Make sure 
     8. Enter a nice commit message and press `Commit changes` below the code viewer.
 - Open the README.md file and alter it to suit your project (don't forget to update the URL of the status badge)
 - If you want your API to be downloadable through the Common Gateway API store make sure that your repository is set to public
-- Open the OAS.yaml (or .json) in your repository on GitHub.
+- Open the publiccode.yaml in your repository on GitHub.
 - Click the `raw` button on the top right of the code viewer.
 - Copy the url from your browser.
 - Open .env from your repository and press the `edit icon` (pencil) in the top right of the code viewer.
 - Scroll to the bottom and find `PUBLICCODE`.
 - Overwrite the url with your OAS url.
 
-After following these steps your repository should be set up properly. To test your repository locally read [running the api locally](#running-the-api-locally).
+After following these steps your repository should be set up properly.
+To test your repository locally read [running the api locally](#running-the-api-locally).
+If you want to have your API set up online read [running the api online](#running-the-api-online).
 
 ## Your OpenAPI Specification
 
