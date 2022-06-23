@@ -140,7 +140,9 @@ You will need [Docker desktop](https://www.docker.com/) installed to run this AP
 - Wait for containers to finish loading.
 - If the php container shows: 'Ready to handle connections' your API is accessible on localhost/api or localhost:80/api.
 
-If there are any issues when loading the containers try to execute: `docker-compose pull` and then try `docker-compose up` again.
+If there are any issues when loading the containers try to execute: `docker-compose pull` and then try `docker-compose up` again. Otherwise continue to [testing with http requests](#testing-with-http-requests).
+
+### Testing with http requests
 
 To test your API you will need a [http](https://developer.mozilla.org/en-US/docs/Web/HTTP/Overview) request client. We recommend [Postman](https://www.postman.com) but any client will suffice. Here is a list if you wanwt to find a client yourself: [https://rapidapi.com/blog/best-api-clients/](https://rapidapi.com/blog/best-api-clients/).
 
@@ -176,7 +178,7 @@ If set you can run the following command in a PHP pod:
 
 `bin/console app:load-publiccodes`
 
-The console should show if the API has been loaded successfully, and then you can make API requests to `[yourdomain]/api`.
+The console should show if the API has been loaded successfully, and then you can make API http requests the `[yourdomain]/api`. If you need more info about testing your API, read [testing with http requests](#testing-with-http-requests).
 
 ## (Unit) Testing the API
 
