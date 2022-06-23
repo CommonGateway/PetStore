@@ -11,6 +11,9 @@ Quick links about this API:
 - [Public Code (file about this API and makes it searchable)](https://github.com/CommonGateway/PetStore/blob/main/publiccode.yaml)
 - [Stoplight.io (OAS editing tool)](https://conduction.stoplight.io/docs/pet-store)
 
+
+It is also possible to [use this API with the skeleton-app](#running-the-api-with-the-skeleton-app).
+
 ## Creating your repository from this template
 
 To use this repository as a template, you will need a GitHub account. Make sure you have a GitHub account and are logged in on [GitHub](https://github.com). When you are logged in you can see a `Use this template` button in the top right corner of [this repository](https://github.com/CommonGateway/PetStoreAPI). Then select the owner and fill in a nice name for your new repository. After creating your new repository, please follow these steps:
@@ -141,6 +144,8 @@ docker-compose up
 
 For those not familiar, below is a detailed walkthrough.
 
+### Running the API with docker
+
 You will need [Docker desktop](https://www.docker.com/) installed to run this API dockerized. Docker will run this API on the Common Gateway on dockerized containers so you dont have to worry about having the correct PHP version or other languages/dependencies.
 
 - Open a command line interface, for windows you can press `Win+R` and search for `cmd`.
@@ -190,6 +195,18 @@ If set you can run the following command in a PHP pod:
 `bin/console app:load-publiccodes`
 
 The console should show if the API has been loaded successfully, and then you can make API http requests the `[yourdomain]/api`. If you need more info about testing your API, read [testing with http requests](#testing-with-http-requests).
+
+## Running the API with the skeleton-app
+
+To run the API with the [skeleton-app](https://github.com/ConductionNL/skeleton-app), make sure u have raw url of the publiccode.yaml of the API you want to use. If you followed the guide in this repository, you can use the raw url to that publiccode.yaml of the API you created.
+- Go to the GitHub repository of your API.
+- Open the publiccode.yaml and click the `raw` button in the top right of the code viewer.
+- Copy the url in your browser.
+- Go to your skeleton-app repository.
+- Open .env.
+- Scroll down and find `PUBLICCODE` and set the value with your copied url.
+- Run the local docker-compose file from your skeleton-app project, if you don't know read [running the api with docker](#running-the-api-with-docker) but keep in mind that you are running the API in your skeleton-app repository, and not the API repository itself.
+
 
 ## (Unit) Testing the API
 
