@@ -70,7 +70,7 @@ To create your OAS with [Stoplight](https://stoplight.io/), follow these steps:
 - Create a new project with the `New Project` button in the top right corner.
 - To create a new API, create a blank project with a proper name.
 - Press the `API` button in the mid left window and fill in your API name, then press create.
-- Go to `Overview`, find `Servers` and make sure there is 1 server with value `http://localhost`.
+- Go to `Overview`, find `Servers` and make sure there is 1 server with value `http://localhost/api`.
 - Firstly, you can remove all standard Paths. Right click one in the bottom left and press `Delete Path`. The same should be done for `Models` except if you would like to keep the example.
 - Then you should create a model (object) which we can link to a path later. Right-click on 'Models' in the bottom left window and select 'New model'. Here you can define an object.
 - You can create paths (endpoints) by right-clicking on 'Paths' in the bottom left window and selecting 'New Path'. You can add multiple methods to your path by selecting one and pressing the + operation button.
@@ -88,7 +88,7 @@ To edit your OAS with [Stoplight](https://stoplight.io/), follow these steps:
 - Navigate to projects in the top navigation or go to yourworkspacename.stoplight.io/admin/projects.
 - Create a new project with the `New Project` button in the top right corner.
 - To edit an already existing API and you have the OpenAPI file for that API, you can choose to `Import OpenAPI file`.
-- Go to `Overview`, find `Servers` and make sure there is 1 server with value `http://localhost`.
+- Go to `Overview`, find `Servers` and make sure there is 1 server with value `http://localhost/api`.
 - Firstly, you should create a model (object) which we can link to a path later. Right-click on 'Models' in the bottom left window and select 'New model'. Here you can define an object.
 - You can create paths (endpoints) by right-clicking on 'Paths' in the bottom left window and selecting 'New Path'. You can add multiple methods to your path by selecting one and pressing the + operation button.
 - To link a path with a model, you can select a path, add or select a response, add or select `body` from that response, and then if this path is an array of objects select `array` as type with subtype `$ref` or if this path is for a single object select `$ref` as type. In the `$ref` search box you can find and select your created models.
