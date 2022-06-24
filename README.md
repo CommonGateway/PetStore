@@ -2,7 +2,7 @@
 
 This repository is an example of a [Common Gateway](https://github.com/CommonGateway) configuration for generating an [API](https://www.howtogeek.com/343877/what-is-an-api/). This example has been specifically set up to use as a template to create and use a API or setup and use a existing API. 
 
-This repository is called the PetStore because its a standard scenario many people use to design their first API/datamodel.
+This repository is named the PetStoreAPI because its a standard scenario many people use to design their first API/datamodel.
 
 To start with creating or setting up a API start with [creating your repository from this template](#creating-your-repository-from-this-template). This step will start and guide you through the process.
 
