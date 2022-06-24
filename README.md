@@ -1,5 +1,8 @@
 # Pet Store API
 
+[![Automated Testing](https://github.com/CommonGateway/PetStore/actions/workflows/tests.yml/badge.svg)](https://github.com/CommonGateway/PetStore/actions/workflows/tests.yml)
+
+
 This repository is an example of a [Common Gateway](https://github.com/CommonGateway) configuration for generating an [API](https://www.howtogeek.com/343877/what-is-an-api/). This example has been specifically set up to use as a template to create and use a API or setup and use a existing API. 
 
 This repository is named the PetStoreAPI because its a standard scenario many people use to design their first API/datamodel.
