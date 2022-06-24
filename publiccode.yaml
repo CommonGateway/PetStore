@@ -24,12 +24,12 @@ developmentStatus: beta
 
 description:
   nl:
-    shortDescription: "Een API voor data rondom producten voor gemeenten."
+    shortDescription: "Een API voor data rondom een dierenwinkel."
     documentation: 'https://redocly.github.io/redoc/?url=https://raw.githubusercontent.com/CommonGateway/PetStore/main/OAS.yaml&nocors'
     apiDocumentation: 'https://raw.githubusercontent.com/CommonGateway/PetStore/main/OAS.yaml'
     # testDataLocation: 'https://raw.githubusercontent.com/CommonGateway/PetStore/main/data/data.json'
   en:
-    shortDescription: "An API for data around products for municipalities."
+    shortDescription: "An API for data about a pet store."
     documentation: 'https://redocly.github.io/redoc/?url=https://raw.githubusercontent.com/CommonGateway/PetStore/main/OAS.yaml&nocors'
     apiDocumentation: 'https://raw.githubusercontent.com/CommonGateway/PetStore/main/OAS.yaml'
     # testDataLocation: 'https://raw.githubusercontent.com/CommonGateway/PetStore/main/data/data.json'
