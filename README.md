@@ -11,6 +11,7 @@ The target audience for this repository has preferrably a understanding of:
 - (REST)[API](https://www.redhat.com/en/topics/api/what-is-a-rest-api)
 - [HTTP requests](https://developer.mozilla.org/en-US/docs/Web/HTTP/Methods)
 - [Docker](www.docker.com)
+- Integrated Development Environment
 
 To start with creating or setting up an API start with [creating your repository from this template](#creating-your-repository-from-this-template). This step will start and guide you through the process.
 
@@ -37,7 +38,7 @@ Testing the API
 Further reading:
 
 - [API Documentation (redocly is a API documentation generator)](https://redocly.github.io/redoc/?url=https://raw.githubusercontent.com/CommonGateway/PetStore/main/OAS.yaml&nocors)
-- [API Definition (yaml or json file)](https://github.com/CommonGateway/PetStore/blob/main/OAS.yaml)
+- [API Definition (YAML or JSON file)](https://github.com/CommonGateway/PetStore/blob/main/OAS.yaml)
 - [Public Code (file about this API and makes it searchable)](https://github.com/CommonGateway/PetStore/blob/main/publiccode.yaml)
 - [Stoplight.io (OAS editing tool)](https://conduction.stoplight.io/docs/pet-store)
 
@@ -47,47 +48,55 @@ _____________________________________________________________________
 
 _____________________________________________________________________
 
-To use this repository as a template, you will need a [GitHub](https://github.com/join) account. When you are logged in you can see a green `Use this template` button in the top right corner of [this repository](https://github.com/CommonGateway/PetStoreAPI). You are asked for a name, a desciption (optional) and the visibility of the repository. Similar to forks, you can opt for including other branches as well. The difference with a fork is you will get the repository "as is".
+To use this repository as a template, you will need a [GitHub](https://github.com/join) account. When you are logged in you can see a green `Use this template` button in the top right corner of this repository. You are asked for a name, a desciption (optional) and the visibility of the repository. Similar to forks, you can opt for including other branches as well. The difference with a fork is you will get the repository "as is".
 
-- Go to the GitHub page of your new repository.
-- Replace the `OAS.yaml` (or `.json`) file in the repository root with [your own OpenAPI Specification](#your-openapi-specification). (Also read [an OAS to your repository](#adding-your-oas-to-your-repository))
+To configure the repository to make it your own, as few steps may be needed:
+
+- Go to your new repository.
+- Replace the `OAS.yaml` (or `.json`) file in the repository root with [your own OpenAPI Specification](#your-openapi-specification). (Also read [adding an OAS to your repository](#adding-your-oas-to-your-repository))
 - Open the `publiccode.yaml` file.
 - Press the `edit icon` (pencil) in the top right of the code viewer.
 - Change the following in the file:
     1. `name` to the name of your API.
     2. `url` to the url of this GitHub repository.
     3. `description` to the description of your API.
-    4. `releaseDate` to an earlier date if already released or TBA (to be announced).
-    5. Scroll down to `description`
-    6. Change both for `en` and `nl` the `shortDescription`, the `documentation` to `https://redocly.github.io/redoc/?url=https://raw.githubusercontent.com/{yourOrganizationOrUserName}/{yourRepositoryName}/main/OAS.yaml&nocors` and the `apiDocumentation` to `https://raw.githubusercontent.com/{yourOrganizationOrUserName}/{yourRepositoryName}/main/OAS.yaml`
-    7. Change `OAS.yaml` to `OAS.json` if your OAS is a json file.
-    8. Enter a nice commit message and press `Commit changes` below the code viewer.
-- Open the README.md file and alter it to suit your project (don't forget to update the URL of the status badge)
-- If you want your API to be downloadable through the Common Gateway API store make sure that your repository is set to public
+    4. Change both for `en` and `nl` the `shortDescription`, the `documentation` to:
+
+    `https://redocly.github.io/redoc/?url=https://raw.githubusercontent.com/{yourOrganizationOrUserName}/{yourRepositoryName}/main/OAS.yaml&nocors`
+
+    and the `apiDocumentation` to:
+
+    `https://raw.githubusercontent.com/{yourOrganizationOrUserName}/{yourRepositoryName}/main/OAS.yaml`
+
+    5. `releaseDate` to an earlier date if already released or TBA (to be announced).
+
+    Save changes by committing them.
+
 - Open the `publiccode.yaml` in your repository on GitHub.
 - Click the `raw` button on the top right of the code viewer.
-- Copy the url from your browser.
-- Open `.env` from your repository and press the `edit icon` (pencil) in the top right of the code viewer.
+- Copy the URL from your browser.
+- Open `.env` from your repository and press the `edit icon` in the top right of the code viewer.
 - Scroll to the bottom and find `PUBLICCODE`.
 - Overwrite the url with your `publiccode url`.
 
-After following these steps your repository should be set up properly.
-To test your repository locally read [running the api locally](#running-the-api-locally).
-If you want to have your API set up online read [running the api online](#running-the-api-online).
+- Change `OAS.yaml` to `OAS.json` if your OAS is a JSON file. Of course you need to replace the contents of the files as well with your JSON based OAS
+- Open the README.md file and alter it to suit your project (don't forget to update the URL of the status badge)
+- If you want your API to be downloadable through the Common Gateway API store make sure that your repository is set to `public`
 
-_________________________________________________________
+After following these steps your repository should be set up properly.
+To test your repository locally read [running the API locally](#running-the-api-locally).
+If you want to have your API set up online read [running the API online](#running-the-api-online).
+_________________________________
 
 ## Your OpenAPI Specification
 
-___________________________________________________________
-
-What is an OpenAPI Specification
+________________________________
 
 The OpenApi Specification(OAS) defines a standard, language-agnostic interface to RESTful APIs, allowing humans and computers to discover and understand the service's capabilities without access to source code, documentation, or network traffic inspection. When properly defined, a consumer can understand and interact with the remote service with minimal implementation logic.
 
-Documentation generation tools can then use an OpenAPI definition to display the API, code generation tools to generate servers and clients in various programming languages, testing tools, and many other use cases.
+Documentation generation tools use an OpenAPI definition to display the API, code generation tools to generate servers and clients in various programming languages, testing tools, and many other use cases.
 
-This template uses the (OAS) as an API definition for the reasons above.
+This template uses the OAS as an API definition for the reasons above.
 
 If you don't have an OAS yet you can continue with [creating your OAS](#creating-your-oas), if you already have an OAS but you want to edit you can go to [editing your OAS](#editing-your-oas). If you already have an OAS defintion ready, you can skip to [adding your OAS to your repository](#adding-your-oas-to-your-repository).
 
@@ -97,9 +106,9 @@ ________________________________________________________________
 
 _________________________________________________________________
 
-Writing the API standard yourself is very error-prone. We recommend using [Stoplight](https://stoplight.io) for the automatic generation of an OAS, but there's also [Postman](https://www.postman.com). For checking, there are also editors, like <https://editor.swagger.io>.
+Writing the Open API Specification standard yourself is very error-prone. We recommend using [Stoplight](https://stoplight.io) for the automatic generation of an OAS, but there's also [Postman](https://www.postman.com). For quick checking, there are also editors, like the [Swagger](https://editor.swagger.io) editor.
 
-The OAS can be defined in both JSON and YAML. It shouldn't make a difference in most cases, and although we often work from a YAML-first basis, there have been times were working with JSON was superior.
+The OAS can be defined in both [JSON](https://www.w3schools.com/js/js_json_intro.asp) and [YAML](https://docs.fileformat.com/programming/yaml/). It shouldn't make a difference in most cases, and although we often work from a YAML-first basis, there have been times were working with JSON was superior.
 
 To create your OAS with [Stoplight](https://stoplight.io/), follow these steps:
 
@@ -117,7 +126,6 @@ To create your OAS with [Stoplight](https://stoplight.io/), follow these steps:
 - If you are satisfied with your created API you can save it by selecting `Publish` in the top left of the page. Next, we want to export this OpenAPI Specification by righting clicking your .yaml file in the top left section of the page and selecting `Export`. Choose the format YAML and press `Save to file`.
 
 You have now downloaded your OpenAPI Specification (OAS). Continue to [adding your OAS to your repository](#adding-your-oas-to-your-repository).
-
 _________________________________________________________________
 
 ### Editing your OAS
@@ -188,47 +196,70 @@ __________________________________________________
 
 _________________________________________________
 
-Running this API can be done in various ways. Make sure you first have this API [cloned to your computer](#cloning-your-repository).
-If you are familiar with Docker, Git, and an HTTP client you can execute the following commands and test your API on `localhost/api`.
-
-```bash
-git clone https://github.com/CommonGateway/PetStoreAPI.git
-cd PetStoreAPI
-docker-compose up
-```
-
-For those not familiar, below is a detailed walkthrough.
+Running this API can be done in various ways. For each of those is a detailed walkthrough below.
 
 ______________________________________________
 
-### Running the API with Docker
+### Running the API with Docker and the Common Gateway
 
 _____________________________________________
 
 You will need [Docker desktop](https://www.docker.com/) installed to run this API dockerized. Docker will run this API on the Common Gateway on dockerized containers so you don't have to worry about having the correct PHP version or other languages/dependencies.
 
-- Open a command-line interface, for windows you can press `Win+R` and search for `cmd`.
-- Change to the chosen directory with `cd (the directory where the repository is cloned to)`, an example: `cd C:\Users\JohnDoe\Projects\PetStore`.
+With Docker Desktop running, execute these commands in the terminal
 
-- Execute `docker-compose pull`
-- Execute `docker-compose up`
-- Wait for containers to finish loading.
-- When the php container shows: 'Ready to handle connections' your API is accessible on localhost/api or `localhost:80/api`.
+```bash
+git clone https://github.com/CommonGateway/PetStoreAPI.git
+cd PetStoreAPI
+docker-compose pull
+docker-compose up
+```
 
 If there are any issues when loading the containers try to execute: `docker-compose pull` and then try `docker-compose up` again. Otherwise continue to [testing with http requests](#testing-with-http-requests).
+
+After all the containers are running and the 'Ready to handle connections' message is displayed in the terminal.
+
+You can visit your API documentation via [Redocly](https://redocly.com/) going [here](https://redocly.github.io/redoc/?nocors&url=http://localhost/openapi.json)
+
+or
+
+Go to `local:8000/endpoints/` in the admin user interface of the Gateway. The credentials are :
+
+```bash
+username: test@gateway.local
+password: !ChangeMe!
+```
+
+More functionality in the futute will be added, including altering your API via this portal.
+
+________________________________________________________
+
+### Running the API online
+
 _________________________________________________________
 
-## Running the API online
+Setting up this option requires extensive knowledge of Kubernetes and prior experience with Helm is highly recommended.
 
-_________________________________________________________
+An up-and-running cluster is needed as well. This is most likely for production environments only. If cluster configuration is wrongly set up, it can lead to costly mistakes.
 
-// TODO more explaination
+The Helm chart can be found [here](https://github.com/ConductionNL/commonground-gateway/tree/master/api/helm) and is used for the online installation of the Common Gateway. Instructions are found [here](https://github.com/ConductionNL/conduction-ui/blob/master/INSTALLATION.md).
+
+// waar moest dit??
+
+- helm value. config.publiccode???
+
+wat hiermee??
+
 To run the API on an online Gateway, the `helm` secret `PUBLICCODE` must be set with the url to the raw `publiccode.yaml`, like:
 `https://raw.githubusercontent.com/CommonGateway/PetStoreAPI/main/publiccode.yaml`
 
-When all set, you can run the following command in a PHP pod:
+If you have the Kubernetes [dashboard](https://kubernetes.io/docs/tasks/access-application-cluster/web-ui-dashboard/) set up, you can run the following command in a PHP container (from the left-side nav):
 
 `bin/console app:load-publiccodes`
+
+Or in the terminal
+
+`kubectl exec [podname] [--tty --stdin --namespace=namespace -c commonground-gateway-php | bin/console app:load-publiccodes ]`
 
 The console should show if the API has been loaded successfully, and then you can make API HTTP requests the `[yourdomain]/api`. If you need more info about testing your API, read [testing with http requests](#testing-with-http-requests).
 
@@ -246,7 +277,7 @@ To run the API with the [skeleton-app](https://github.com/ConductionNL/skeleton-
 - Go to your skeleton-app repository.
 - Open `.env`.
 - Scroll down and find `PUBLICCODE` and set the value with your copied url.
-- Run the local docker-compose file from your skeleton-app project, if you don't know read [running the api with docker](#running-the-api-with-docker) but keep in mind that you are running the API in your skeleton-app repository, and not the API repository itself.
+- Run the local `docker-compose.yml` file from your skeleton-app project, if you don't know read [running the API with docker](#running-the-api-with-docker), but keep in mind that you are running the API in your skeleton-app repository, and not the API repository itself.
 
 __________________________________________________
 
@@ -256,34 +287,47 @@ _________________________________________________
 
 To test your API you will need a [HTTP](https://developer.mozilla.org/en-US/docs/Web/HTTP/Overview) request client. We recommend [Postman](https://www.postman.com) but any client will suffice. [Here's](https://rapidapi.com/blog/best-api-clients/) a list if you want to find a client yourself.
 
-This example uses Postman.
+This example uses Postman. Postman is a very advanced tool and you may not need all the functionality.
 
 - Sign up or login on [Postman](https://www.postman.com).
 - [Download Postman](https://www.postman.com/downloads/).
 - Open Postman.
 - Postman will give you a workspace.
-- Go to `APIs` in the left menu.
-- Press the `Create an API` next to the left menu.
-- Switch to the `Import` tab.
-- Select the bottom option `Select files`.
+- Next to Workspace, click `Import`
+- Select the bottom option `Select files` or click on the `OpenAPI` button.
 - Choose your OAS.yaml (or .json) and upload it.
-- Click `Import` in the bottom right of the modal.
+
+Both a visualization of the API and a `collection` will be added. You can access these on the left side panel.
+
+- Go to `APIs` in the left menu.
 - Postman has now generated a test collection for your API.
+
 - Go to `Collections` in the left menu.
 - Open your new collection and check out some requests.
-- Make sure that your requests for a single object have a proper id.
-- Make sure with POST and PUT requests that the body is correct. Postman doesn't use your example bodies, so integer properties and enums and other validations should be set accordingly.
+- Make sure that your requests for a single object have a proper `{id}`.
+- Make sure with `POST` and `PUT` requests that the body is correct.
+
+Postman doesn't use your example bodies, so integer properties and enums and other validations should be set accordingly.
+
 - Hit the `Send` button in the top right of the page.
 - Check the result in the bottom response body.
 
-Based on your request the response may differ. You know now how to test your API.
-If you change your API and your OAS, you can re-import that file and re-generate a collection.
+Based on your request the response may differ. You know now how to test your API. If you change your API and your OAS, you can re-import that file and re-generate a collection.
+____________________________________________________________
 
 ## (Unit) Testing the API
+
+____________________________________________________________
 
 // TODO new text about unit testing in the Gateway (still needs to be built in the Gateway?)
 GitHub launches an action on every commit that generates a Postman collection and tests the API. You view the action results under `Actions` on the GitHub page.
 
+____________________________________________________________
+
 ## About Common Gateway configuration files
 
+____________________________________________________________
+
 // TODO ELABORATE
+
+>
