@@ -1,4 +1,4 @@
-name: Generate 
+name: Generate publiccode.yaml and .env files
 
 # Controls when the workflow will run
 on:
@@ -200,7 +200,7 @@ jobs:
             ##################################################
             # Publiccode
             ##################################################
-            PUBLICCODE="https://raw.githubusercontent.com/${{ github.event.repository }}/main/publiccode.yaml"
+            PUBLICCODE="https://raw.githubusercontent.com/${{ github.repository }}/main/publiccode.yaml"
 
 
       - name: Commit and push changes
