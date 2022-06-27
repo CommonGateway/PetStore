@@ -1,6 +1,6 @@
 # Pet Store API
 
-Here you can find an example of a Common Gateway configuration for generating an API. This example has been specifically set up to use as a template. Read more about that under [Using this repository as a template](#Using this repository as a temple).
+Here you can find an example of a Common Gateway configuration for generating an OpenAPI. This example has been specifically set up to use as a template. Read more about that under [Using this repository as a template](#Using this repository as a temple).
 
 - [API Definition (redocly)](https://redocly.github.io/redoc/?url=https://raw.githubusercontent.com/CommonGateway/PetStore/main/OAS.yaml&nocors)
 - [API Definition (file)](https://github.com/CommonGateway/PetStore/blob/main/OAS.yaml)
