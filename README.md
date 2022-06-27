@@ -34,25 +34,8 @@ To use this repository as a template, you will need a [GitHub account](https://g
 - Go to your new created GitHub repository.
 - Replace the OAS.yaml (or .json) file in the repository root with [your own OpenAPI Specification](#your-openapi-specification).
 - [Add your Open API Specification (OAS) to your repository](#adding-your-oas-to-your-repository).
-- Open the `publiccode.yaml` file.
-- Press the `edit icon` (pencil) in the top right of the code viewer.
-- Change the following in the file:
-    1. `name` to the name of your API.
-    2. `url` to the url of this GitHub repository. 
-    3. `description` to the description of your API.
-    4. `releaseDate` to a earlier date if already released or TBA (to be announced).
-    5. Scroll down to `description`
-    6. Change both for `en` and `nl` the `shortDescription`, the `documentation` to `https://redocly.github.io/redoc/?url=https://raw.githubusercontent.com/{yourOrganizationOrUserName}/{yourRepositoryName}/main/OAS.yaml&nocors` and the `apiDocumentation` to `https://raw.githubusercontent.com/{yourOrganizationOrUserName}/{yourRepositoryName}/main/OAS.yaml`
-    7. Change `OAS.yaml` to `OAS.json` if your OAS is a json file.
-    8. Enter a nice commit message and press `Commit changes` below the code viewer.
-- Open the README.md file and alter it to suit your project (don't forget to update the URL of the status badge)
-- If you want your API to be downloadable through the Common Gateway API store make sure that your repository is set to public
-- Open the publiccode.yaml in your repository on GitHub.
-- Click the `raw` button on the top right of the code viewer.
-- Copy the url from your browser.
-- Open .env from your repository and press the `edit icon` (pencil) in the top right of the code viewer.
-- Scroll to the bottom and find `PUBLICCODE`.
-- Overwrite the url with your publiccode url.
+- Open the README.md file and alter it to suit your project
+- If you want your API to be downloadable through the Common Gateway API store make sure that your repository is set to public.
 
 After following these steps your repository should be set up properly.
 To test your repository locally read [running the api locally](#running-the-api-locally).
