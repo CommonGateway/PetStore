@@ -65,6 +65,9 @@ jobs:
 
       - name: Commit and push changes
         run: |
+          git config --global user.name "${{ github.actor }}"
+          git config --global user.email "${{ github.event.pusher.email }}"
+
           git add -A
           git commit -m "Auto updated publiccode.yaml"
           git push
