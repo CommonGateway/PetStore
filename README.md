@@ -3,13 +3,13 @@
 [![Automated Testing](https://github.com/CommonGateway/PetStore/actions/workflows/tests.yml/badge.svg)](https://github.com/CommonGateway/PetStore/actions/workflows/tests.yml)
 
 
-This repository is an example of a [Common Gateway](https://github.com/CommonGateway) configuration for generating an [API](https://www.howtogeek.com/343877/what-is-an-api/). This example has been specifically set up to use as a template to create and use a API or setup and use a existing API. 
+This repository is an example of a [Common Gateway](https://github.com/CommonGateway) configuration for generating an [API](https://www.howtogeek.com/343877/what-is-an-api/). This example has been specifically set up to use as a template to create and use a repository which holds a API definiton as a OpenAPI Specification or setup and use a existing OpenAPI Specification as API. 
 
 This repository is named the PetStoreAPI because its a standard scenario many people use to design their first API/datamodel.
 
-To start with creating or setting up a API start with [creating your repository from this template](#creating-your-repository-from-this-template). This step will start and guide you through the process.
+To start with creating or setting up a repository with a OpenAPI Specification start with [creating your repository from this template](#creating-your-repository-from-this-template). This step will start and guide you through the process.
 
-Quick links about this API:
+Quick links about this repository:
 
 - [API Documentation (redocly is a API documentation generator)](https://redocly.github.io/redoc/?url=https://raw.githubusercontent.com/CommonGateway/PetStore/main/OAS.yaml&nocors)
 - [API Definition (yaml or json file)](https://github.com/CommonGateway/PetStore/blob/main/OAS.yaml)
@@ -17,14 +17,23 @@ Quick links about this API:
 - [Stoplight.io (OAS editing tool)](https://conduction.stoplight.io/docs/pet-store)
 
 
-It is also possible to [use this API with the skeleton-app](#running-the-api-with-the-skeleton-app).
+It is also possible to [use this repository with its API with the skeleton-app](#running-the-api-with-the-skeleton-app).
+
+## Requirements
+
+- A [stoplight.io account](https://stoplight.io/login/).
+- A [GitHub account](https://github.com/login).
+- [Git](https://git-scm.com/download/win) or any [Git GUI](https://git-scm.com/downloads/guis) (we recommend [GitKraken](https://www.gitkraken.com).
+- A code editor (notepad or any IDE).
+- [Docker desktop](https://www.docker.com/products/docker-desktop/).
 
 ## Creating your repository from this template
 
-To use this repository as a template, you will need a GitHub account. Make sure you have a GitHub account and are logged in on [GitHub](https://github.com). When you are logged in you can see a `Use this template` button in the top right corner of [this repository](https://github.com/CommonGateway/PetStoreAPI). Then select the owner and fill in a nice name for your new repository. After creating your new repository, please follow these steps:
+To use this repository as a template, you will need a [GitHub account](https://github.com/login). Make sure you have a GitHub account and are logged in on GitHub. When you are logged in you can [use this template](https://github.com/CommonGateway/PetStoreAPI/generate), select the owner and fill in a nice name for your new repository. After creating your new repository, please follow these steps:
 
-- Go to the GitHub page of your repository.
-- Replace the OAS.yaml (or .json) file in the repository root with [your own OpenAPI Specification](#your-openapi-specification). (Also read [adding your OAS to your repository](#adding-your-oas-to-your-repository))
+- Go to your new created GitHub repository.
+- Replace the OAS.yaml (or .json) file in the repository root with [your own OpenAPI Specification](#your-openapi-specification).
+- [Add your Open API Specification (OAS) to your repository](#adding-your-oas-to-your-repository).
 - Open the `publiccode.yaml` file.
 - Press the `edit icon` (pencil) in the top right of the code viewer.
 - Change the following in the file:
@@ -57,13 +66,13 @@ The OpenApi Specification(OAS) defines a standard, language-agnostic interface t
 
 Documentation generation tools can then use an OpenAPI definition to display the API, code generation tools to generate servers and clients in various programming languages, testing tools, and many other use cases.
 
-This template uses the (OAS) as an API definition for the reasons above.
+This template uses the OAS as an API definition for the reasons above.
 
-If you don't have a API OAS yet you can continue with [creating your oas](#creating-your-oas), if you already have a OAS but you want to edit you can go to [editing your oas](#editing-your-oas). If you have a API OAS defintion which is already ready, you can go to continue to [adding your OAS to your repository](#adding-your-oas-to-your-repository).
+If you don't have a Open API Specification yet you can continue with [creating your oas](#creating-your-oas), if you already have a Open API Specification but you want to edit you can go to [editing your oas](#editing-your-oas). If you already have a Open API Specification, you can go to continue to [adding your OAS to your repository](#adding-your-oas-to-your-repository).
 
 ### Creating your OAS
 
-Writing the API standard yourself is very error-prone. We recommend using [Stoplight](https://stoplight.io) for the automatic generation of an OAS, but there's also [Postman](https://www.postman.com). For checking, there are also editors, like <https://editor.swagger.io>.
+Writing the Open API Specification standard yourself is very error-prone. We recommend using [Stoplight](https://stoplight.io) for the automatic generation of an OAS, but there's also [Postman](https://www.postman.com). For checking, there are also editors, like <https://editor.swagger.io>.
 
 The OAS can be defined in both JSON and YAML. It shouldn't make a difference in most cases, and although we often work from a YAML-first basis, there have been times were working with JSON was superior.
 
@@ -92,7 +101,7 @@ To edit your OAS with [Stoplight](https://stoplight.io/), follow these steps:
 - Create a workspace or use a existing one.
 - Navigate to projects in the top navigation or go to yourworkspacename.stoplight.io/admin/projects.
 - Create a new project with the `New Project` button in the top right corner.
-- To edit an already existing API and you have the OpenAPI file for that API, you can choose to `Import OpenAPI file`.
+- To edit an already existing Open API Specification and you have that file, you can choose to `Import OpenAPI file`.
 - Go to `Overview`, find `Servers` and make sure there is 1 server with value `http://localhost/api`.
 - Firstly, you should create a model (object) which we can link to a path later. Right-click on 'Models' in the bottom left window and select 'New model'. Here you can define an object.
 - You can create paths (endpoints) by right-clicking on 'Paths' in the bottom left window and selecting 'New Path'. You can add multiple methods to your path by selecting one and pressing the + operation button.
@@ -106,7 +115,7 @@ You have now downloaded your OpenAPI Specification (OAS). Continue to [adding yo
 Now you want to have your OAS in your repository, so that the CommonGateway can work with it.
 You can add the OAS in 2 ways. The simplest is the following for those who don't have Git or a Git GUI, and are not familair with a IDE. 
 
-- One the GitHub page of your API open the OAS.yaml and press the `edit icon` (pencil) in the top right of the code viewer.
+- Go your repository page and open the OAS.yaml and press the `edit icon` (pencil) in the top right of the code viewer.
 - Open your local OAS file and copy its content.
 - Paste the copied content into the OAS.yaml you opened on GitHub, overwriting its content.
 - If your OAS is a .json file make sure to change the OAS.yaml to OAS.json.
@@ -114,13 +123,15 @@ You can add the OAS in 2 ways. The simplest is the following for those who don't
 
 For those familiar with Git and their IDE, you can [clone this repository](#cloning-your-repository) and overwrite the OAS.yaml with your own OAS. Don't forget to commit push.
 
-Your created OAS is now in your new API repository. You can always view or edit it through Stoplight and export it again, then overwriting the OAS.yaml in your repository. You can continue with the other steps from [this guide](#creating-your-repository-from-this-template).
+Your created OAS is now in your new repository. You can always view or edit it through Stoplight and export it again, then overwriting the OAS.yaml in your repository. You can continue with the other steps from [this guide](#creating-your-repository-from-this-template).
 
 ## Cloning your repository
 
-If you want to clone your repository you will need [Git](https://git-scm.com/download/win) or any [Git GUI](https://git-scm.com/downloads/guis) (we recommend [GitKraken](https://www.gitkraken.com).
+First of all:
 
-- On the GitHub page of this repository press `Code` and copy the `https` link.
+- Go to your GitHub repository page.
+- Look for the `Code` button in the top right of the page.
+- Copy the https link.
 
 If you installed Git without GUI:
 
@@ -134,12 +145,12 @@ Skip this if you already installed Git without GUI and followed the above steps,
 - Select `Clone a repo`.
 - Paste your copied repository link and select the preferred directory.
 
-Now you have your API repository cloned locally. You can view it with a file explorer or any IDE at you chosen directory. If you want to test your API locally you can continue with [running the API locally](#running-the-api-locally).
+Now you have your repository cloned locally. You can view it with a file explorer or any IDE at you chosen directory. If you want to test your API locally you can continue with [running the API locally](#running-the-api-locally).
 
 ## Running the API locally
 
-Running this API can be done through various ways. Make sure you firstly have this API [cloned to your computer](#cloning-your-repository). 
-If you are familiar with Docker, Git and a http client you can execute the following commands and tests your API on localhost/api.
+Running this repository with its API (as Open API Specification) can be done through various ways. Make sure you firstly have this repository [cloned to your computer](#cloning-your-repository). 
+If you are familiar with Docker, Git and a http client you can execute the following commands and tests your API project on localhost/api.
 
 ```bash
 git clone https://github.com/CommonGateway/PetStoreAPI.git
@@ -151,7 +162,7 @@ For those not familiar, below is a detailed walkthrough.
 
 ### Running the API with docker
 
-You will need [Docker desktop](https://www.docker.com/) installed to run this API dockerized. Docker will run this API on the Common Gateway on dockerized containers so you dont have to worry about having the correct PHP version or other languages/dependencies.
+You will need [Docker desktop](https://www.docker.com/) installed to run this API project dockerized. Docker will run your Open API Specification on the Common Gateway on dockerized containers so you dont have to worry about having the correct PHP version or other languages/dependencies.
 
 - Open a command line interface, for windows you can press `Win+R` and search for `cmd`.
 - Change to the chosen directory with `cd (directory where repository is cloned to)`, an example: `cd C:\Users\JohnDoe\Projects\PetStore`.
@@ -200,11 +211,11 @@ If set you can run the following command in a PHP pod:
 
 `bin/console app:load-publiccodes`
 
-The console should show if the API has been loaded successfully, and then you can make API http requests the `[yourdomain]/api`. If you need more info about testing your API, read [testing with http requests](#testing-with-http-requests).
+The console should show if the API has been loaded successfully, and then you can make API http requests to `[yourdomain]/api`. If you need more info about testing your API, read [testing with http requests](#testing-with-http-requests).
 
 ## Running the API with the skeleton-app
 
-To run the API with the [skeleton-app](https://github.com/ConductionNL/skeleton-app), make sure u have raw url of the publiccode.yaml of the API you want to use. If you followed the guide in this repository, you can use the raw url to that publiccode.yaml of the API you created.
+To run your created API with the [skeleton-app](https://github.com/ConductionNL/skeleton-app), make sure u have raw url of the publiccode.yaml of the API you want to use. If you followed the guide in this repository, you can use the raw url to that publiccode.yaml of the API you created.
 - Go to the GitHub repository of your API.
 - Open the publiccode.yaml and click the `raw` button in the top right of the code viewer.
 - Copy the url in your browser.
@@ -217,7 +228,7 @@ To run the API with the [skeleton-app](https://github.com/ConductionNL/skeleton-
 ## (Unit) Testing the API
 
 // TODO new text about unit testing in gateway (still needs to be build in gateway?)
-GitHub launches an action on every commit that generates a Postman collection and tests the API. You view the action results under `Actions` on the GitHub page.
+GitHub launches an action on every commit that generates a Postman collection and tests the API. You view the action results under `Actions` on the GitHub repository page.
 
 ## About Common Gateway configuration files
 
