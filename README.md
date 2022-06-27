@@ -12,9 +12,6 @@ The target audience for this repository has preferrably a understanding of:
 - [HTTP requests](https://developer.mozilla.org/en-US/docs/Web/HTTP/Methods)
 - [Docker](www.docker.com)
 
--
--
-
 To start with creating or setting up an API start with [creating your repository from this template](#creating-your-repository-from-this-template). This step will start and guide you through the process.
 
 This document has the following other sections:
@@ -50,9 +47,9 @@ _____________________________________________________________________
 
 _____________________________________________________________________
 
-To use this repository as a template, you will need a GitHub account. Make sure you have a GitHub account and are logged in on [GitHub](https://github.com/join). When you are logged in you can see a `Use this template` button in the top right corner of [this repository](https://github.com/CommonGateway/PetStoreAPI). Then select the owner and fill in a nice name for your new repository. After creating your new repository, please follow these steps:
+To use this repository as a template, you will need a [GitHub](https://github.com/join) account. When you are logged in you can see a green `Use this template` button in the top right corner of [this repository](https://github.com/CommonGateway/PetStoreAPI). You are asked for a name, a desciption (optional) and the visibility of the repository. Similar to forks, you can opt for including other branches as well. The difference with a fork is you will get the repository "as is".
 
-- Go to the GitHub page of your repository.
+- Go to the GitHub page of your new repository.
 - Replace the `OAS.yaml` (or `.json`) file in the repository root with [your own OpenAPI Specification](#your-openapi-specification). (Also read [an OAS to your repository](#adding-your-oas-to-your-repository))
 - Open the `publiccode.yaml` file.
 - Press the `edit icon` (pencil) in the top right of the code viewer.
