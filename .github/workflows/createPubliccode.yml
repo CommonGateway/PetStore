@@ -22,7 +22,7 @@ jobs:
           # path: 'src'
           file: 'publiccode.yaml'
           content: |
-            publiccodeYmlVersion: "0.1"
+            publiccodeYmlVersion: "0.1" testtestest
 
             name: "Pet Store"
             url: "https://github.com/CommonGateway/PetStore"
