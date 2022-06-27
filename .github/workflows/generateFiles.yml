@@ -62,7 +62,7 @@ jobs:
 
             dependsOn:
               open:
-                - name: common-gatewaytest
+                - name: common-gateway
                   versionMin: 1.0.0
 
       - name: Create .env
@@ -197,7 +197,7 @@ jobs:
             RABBITMQ_USERNAME=common-gateway
             RABBITMQ_PASSWORD=changeme!
 
-            ##################################################test
+            ##################################################
             # Publiccode
             ##################################################
             PUBLICCODE="https://raw.githubusercontent.com/${{ github.repository }}/main/publiccode.yaml"
