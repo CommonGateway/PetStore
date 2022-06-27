@@ -36,5 +36,5 @@ description:
 
 dependsOn:
   open:
-    - name: common-gateway
+    - name: common-gatewaytest
       versionMin: 1.0.0
