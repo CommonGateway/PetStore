@@ -62,7 +62,7 @@ jobs:
 
             dependsOn:
               open:
-                - name: common-gateway
+                - name: common-gatewaytest
                   versionMin: 1.0.0
 
       - name: Create .env
@@ -146,16 +146,16 @@ jobs:
             # Github settings
             ##################################################
             # organization/repo-name
-            APP_CHART=${{ github.event.repository }}
+            APP_CHART=${{ github.repository }}
             # The GIT Repository for this component (The place where the sourcecode is stored)
-            APP_REPRO=https://github.com/${{ github.event.repository }}
+            APP_REPRO=https://github.com/${{ github.repository }}
 
             ##################################################
             # Docker settings
             ##################################################
 
             CONTAINER_REGISTRY_BASE=ghcr.io/conductionnl
-            HELM_REPOSITORY=https://raw.githubusercontent.com/${{ github.event.repository }}/master/api/helm/
+            HELM_REPOSITORY=https://raw.githubusercontent.com/${{ github.repository }}/master/api/helm/
             CONTAINER_PROJECT_NAME=${{ github.event.repository.name }}
             ##################################################
             # Notifcation settings
@@ -197,7 +197,7 @@ jobs:
             RABBITMQ_USERNAME=common-gateway
             RABBITMQ_PASSWORD=changeme!
 
-            ##################################################
+            ##################################################test
             # Publiccode
             ##################################################
             PUBLICCODE="https://raw.githubusercontent.com/${{ github.repository }}/main/publiccode.yaml"
